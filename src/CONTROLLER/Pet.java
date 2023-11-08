@@ -1,22 +1,43 @@
 package CONTROLLER;
 
 public class Pet {
-    public String name;
-    public String breed;
-    public int age;
-    public double price;
+    private String name;
+    private String breed;
+    private int age;
+    private double price;
 
-    // Constructor
-    Pet(String name, String breed, int age, double price) {
-        this.name = name;
-        this.breed = breed;
-        this.age = age;
-        this.price = price;
+    public String getName() {
+        return name;
     }
-    double getPrice()
-    {
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getBreed() {
+        return breed;
+    }
+
+    public void setBreed(String breed) {
+        this.breed = breed;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public double getPrice() {
         return price;
     }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+    
     // Method to get a description of the pet and its breed
     public void getDescription() {
         // Implement your logic to provide a description of the pet and its breed

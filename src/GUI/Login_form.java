@@ -3,7 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package GUI;
+
 import javax.swing.JOptionPane;
+import DATABASE.Customer_prepared_statement;
+import CONTROLLER.Customer;
 
 /**
  *
@@ -29,8 +32,8 @@ public class Login_form extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        TXTEMAIL = new javax.swing.JTextField();
-        txt_password = new javax.swing.JPasswordField();
+        EmailTextField = new javax.swing.JTextField();
+        PasswordTextField = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
         button_login = new javax.swing.JButton();
         button_signup = new javax.swing.JButton();
@@ -47,13 +50,13 @@ public class Login_form extends javax.swing.JFrame {
         jLabel2.setText("EMAIL:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(117, 279, 72, -1));
 
-        TXTEMAIL.addActionListener(new java.awt.event.ActionListener() {
+        EmailTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TXTEMAILActionPerformed(evt);
+                EmailTextFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(TXTEMAIL, new org.netbeans.lib.awtextra.AbsoluteConstraints(216, 277, 341, -1));
-        getContentPane().add(txt_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(216, 333, 341, -1));
+        getContentPane().add(EmailTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(216, 277, 341, -1));
+        getContentPane().add(PasswordTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(216, 333, 341, -1));
 
         jLabel3.setText("PASSWORD");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(117, 335, 72, -1));
@@ -89,19 +92,26 @@ public class Login_form extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void TXTEMAILActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TXTEMAILActionPerformed
+    private void EmailTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailTextFieldActionPerformed
         // TODO add your handling code here:
         
         
         
-    }//GEN-LAST:event_TXTEMAILActionPerformed
+    }//GEN-LAST:event_EmailTextFieldActionPerformed
 
     private void button_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_loginActionPerformed
         // TODO add your handling code here:
+        Customer cust1 = null;
+        String email = EmailTextField.getText();
+        String pass = PasswordTextField.getText();
+        cust1 = Customer_prepared_statement.LogIn(email, pass);
         
-        
-        
-        
+        if (cust1 == null) {
+            JOptionPane.showMessageDialog(null, "Wrong Email or Password!");
+        } else {
+            setVisible(false);
+            new Home().setVisible(true);
+        }
     }//GEN-LAST:event_button_loginActionPerformed
 
     private void button_signupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_signupActionPerformed
@@ -157,7 +167,8 @@ public class Login_form extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField TXTEMAIL;
+    private javax.swing.JTextField EmailTextField;
+    private javax.swing.JPasswordField PasswordTextField;
     private javax.swing.JButton button_exit;
     private javax.swing.JButton button_login;
     private javax.swing.JButton button_signup;
@@ -165,6 +176,5 @@ public class Login_form extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPasswordField txt_password;
     // End of variables declaration//GEN-END:variables
 }
