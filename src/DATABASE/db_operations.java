@@ -1,16 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package DATABASE;
 import java.sql.*;
 import javax.swing.JOptionPane;
 import java.awt.HeadlessException;
-
-/**
- *
- * @author USER
- */
 public class db_operations {
     public static void set_or_delete (String query, String message)
     {
@@ -25,7 +17,8 @@ public class db_operations {
         }
         catch(HeadlessException | SQLException e)
         {
-            JOptionPane.showMessageDialog(null, e,"messange",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, e,"message",JOptionPane.ERROR_MESSAGE);
         }
+        
     }
 }

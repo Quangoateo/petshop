@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package GUI;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -74,26 +75,51 @@ public class Login_form extends javax.swing.JFrame {
         getContentPane().add(button_signup, new org.netbeans.lib.awtextra.AbsoluteConstraints(461, 402, 96, -1));
 
         button_exit.setText("EXIT");
+        button_exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_exitActionPerformed(evt);
+            }
+        });
         getContentPane().add(button_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 402, 73, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/pexels-photo-1108099.jpeg"))); // NOI18N
         jLabel5.setText("jLabel5");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void TXTEMAILActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TXTEMAILActionPerformed
         // TODO add your handling code here:
+        
+        
+        
     }//GEN-LAST:event_TXTEMAILActionPerformed
 
     private void button_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_loginActionPerformed
         // TODO add your handling code here:
+        
+        
+        
+        
     }//GEN-LAST:event_button_loginActionPerformed
 
     private void button_signupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_signupActionPerformed
         // TODO add your handling code here:
+        setVisible(false);
+        new Register_form().setVisible(true);
+        
+        
     }//GEN-LAST:event_button_signupActionPerformed
+
+    private void button_exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_exitActionPerformed
+        // TODO add your handling code here:
+        int a =JOptionPane.showConfirmDialog(null, "confirm closed application","message",JOptionPane.YES_NO_OPTION);
+        if(a==0)
+        {
+            System.exit(0);
+        }
+    }//GEN-LAST:event_button_exitActionPerformed
 
     /**
      * @param args the command line arguments
