@@ -7,13 +7,13 @@ public class Pet {
     public double price;
 
     // Constructor
-    public Pet(String name, String breed, int age, double price) {
+    Pet(String name, String breed, int age, double price) {
         this.name = name;
         this.breed = breed;
         this.age = age;
         this.price = price;
     }
-    public  double getPrice()
+    double getPrice()
     {
         return price;
     }
