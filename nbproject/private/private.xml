@@ -3,18 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Year3/Source_Code/Java/PETSTORE/src/GUI/Pets.java</file>
-            <file>file:/D:/Year3/Source_Code/Java/PETSTORE/src/GUI/Register_form.java</file>
-            <file>file:/D:/Year3/Source_Code/Java/PETSTORE/src/DATABASE/connection_provider.java</file>
-            <file>file:/D:/Year3/Source_Code/Java/PETSTORE/src/GUI/Personal_Info.java</file>
-            <file>file:/D:/Year3/Source_Code/Java/PETSTORE/src/CONTROLLER/customer.java</file>
-            <file>file:/D:/Year3/Source_Code/Java/PETSTORE/src/GUI/Login_form.java</file>
-            <file>file:/D:/Year3/Source_Code/Java/PETSTORE/src/DATABASE/prepared_statements.java</file>
-            <file>file:/D:/Year3/Source_Code/Java/PETSTORE/src/DATABASE/db_operations.java</file>
-            <file>file:/D:/Year3/Source_Code/Java/PETSTORE/src/DATABASE/Customer_prepared_statement.java</file>
-            <file>file:/D:/Year3/Source_Code/Java/PETSTORE/src/CONTROLLER/Pet.java</file>
-            <file>file:/D:/Year3/Source_Code/Java/PETSTORE/src/CONTROLLER/Staff.java</file>
-            <file>file:/D:/Year3/Source_Code/Java/PETSTORE/src/CONTROLLER/product.java</file>
+            <file>file:/C:/Users/TG/Documents/NetBeansProjects/petshop/src/DATABASE/db_operations.java</file>
+            <file>file:/C:/Users/TG/Documents/NetBeansProjects/petshop/src/GUI/Login_form.java</file>
+            <file>file:/C:/Users/TG/Documents/NetBeansProjects/petshop/src/CONTROLLER/Pet.java</file>
+            <file>file:/C:/Users/TG/Documents/NetBeansProjects/petshop/src/DATABASE/Customer_prepared_statement.java</file>
         </group>
     </open-files>
 </project-private>

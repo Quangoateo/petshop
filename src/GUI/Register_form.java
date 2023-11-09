@@ -5,7 +5,7 @@
 package GUI;
 
 import DATABASE.Customer_prepared_statement;
-import CONTROLLER.Customer;
+import CONTROLLER.User;
 
 /**
  *
@@ -119,7 +119,7 @@ public class Register_form extends javax.swing.JFrame {
     }//GEN-LAST:event_NameTextFieldActionPerformed
 
     private void register_formActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_register_formActionPerformed
-        Customer cust1 = new Customer();
+        User cust1 = new User();
         cust1.setName(NameTextField.getText());
         cust1.setEmail(EmailTextField.getText());
         cust1.setPassword(PasswordTextField.getText());

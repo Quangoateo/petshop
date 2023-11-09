@@ -6,7 +6,7 @@ package GUI;
 
 import javax.swing.JOptionPane;
 import DATABASE.Customer_prepared_statement;
-import CONTROLLER.Customer;
+import CONTROLLER.User;
 
 /**
  *
@@ -101,7 +101,7 @@ public class Login_form extends javax.swing.JFrame {
 
     private void button_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_loginActionPerformed
         // TODO add your handling code here:
-        Customer cust1 = null;
+        User cust1 = null;
         String email = EmailTextField.getText();
         String pass = PasswordTextField.getText();
         cust1 = Customer_prepared_statement.LogIn(email, pass);

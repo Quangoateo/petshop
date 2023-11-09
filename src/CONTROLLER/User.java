@@ -8,10 +8,10 @@ package CONTROLLER;
  *
  * @author TG
  */
-public class Customer {
+public class User {
     private String name;
     private String contactInfo;
-    private int customerID;
+    private int userID;
     private String password;
     private String email;
 
@@ -31,12 +31,12 @@ public class Customer {
         this.contactInfo = contactInfo;
     }
 
-    public int getCustomerID() {
-        return customerID;
+    public int getUserID() {
+        return userID;
     }
 
-    public void setCustomerID(int customerID) {
-        this.customerID = customerID;
+    public void setUserID(int userID) {
+        this.userID = userID;
     }
 
     public String getPassword() {
