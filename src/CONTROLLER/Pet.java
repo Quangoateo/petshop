@@ -1,10 +1,17 @@
 package CONTROLLER;
 
-public class Pet {
+public abstract class Pet implements Description {
     private String name;
     private String breed;
     private int age;
     private double price;
+
+    public Pet(String name, String breed, int age, double price) {
+        this.name = name;
+        this.breed = breed;
+        this.age = age;
+        this.price = price;
+    }
 
     public String getName() {
         return name;
@@ -36,16 +43,5 @@ public class Pet {
 
     public void setPrice(double price) {
         this.price = price;
-    }
-    
-    // Method to get a description of the pet and its breed
-    public void getDescription() {
-        // Implement your logic to provide a description of the pet and its breed
-        System.out.print("NAME:"+name);
-        System.out.print("BREED:"+breed);
-        System.out.print("AGE:"+age);
-        System.out.print("Price:"+price);
-        // Return a placeholder description for demonstration purposes
-        // Change this as needed
     }
 }
