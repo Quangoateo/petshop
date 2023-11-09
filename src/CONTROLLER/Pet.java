@@ -1,6 +1,6 @@
 package CONTROLLER;
 
-public abstract class Pet implements Description {
+public class Pet implements Description {
     private String name;
     private String breed;
     private int age;
@@ -11,6 +11,9 @@ public abstract class Pet implements Description {
         this.breed = breed;
         this.age = age;
         this.price = price;
+    }
+    
+    public Pet() {
     }
 
     public String getName() {
@@ -44,4 +47,10 @@ public abstract class Pet implements Description {
     public void setPrice(double price) {
         this.price = price;
     }
+    
+    @Override
+    public String getDescription() { return "lmao"; }
+    
+    @Override
+    public String getDetails(String parameter) { return "lmao"; }
 }

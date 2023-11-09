@@ -61,6 +61,12 @@ public class Register_form extends javax.swing.JFrame {
             }
         });
         getContentPane().add(PasswordTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 383, -1));
+
+        EmailTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EmailTextFieldActionPerformed(evt);
+            }
+        });
         getContentPane().add(EmailTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 383, -1));
 
         register_form.setText("Register");
@@ -130,6 +136,10 @@ public class Register_form extends javax.swing.JFrame {
     private void Back_formActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_formActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Back_formActionPerformed
+
+    private void EmailTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EmailTextFieldActionPerformed
 
     /**
      * @param args the command line arguments

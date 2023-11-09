@@ -39,13 +39,13 @@ public class Personal_Info extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        staff_role = new javax.swing.JTextField();
+        staff_id = new javax.swing.JTextField();
+        phonenumber = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        staff_name = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
@@ -57,15 +57,20 @@ public class Personal_Info extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
+        contact_info = new javax.swing.JTextField();
+        customer_id = new javax.swing.JTextField();
+        customer_name = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
         jButton13 = new javax.swing.JButton();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
+        staff_salary = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -152,7 +157,7 @@ public class Personal_Info extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 160, 150, 20));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 130, 150, 20));
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -175,12 +180,12 @@ public class Personal_Info extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 130, 150, 20));
+        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 100, 150, 20));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel9.setText("Price");
+        jLabel9.setText("Role");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -189,7 +194,7 @@ public class Personal_Info extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addComponent(jLabel9)
-                .addContainerGap(89, Short.MAX_VALUE))
+                .addContainerGap(92, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -198,16 +203,16 @@ public class Personal_Info extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 220, 150, 20));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 200, 150, 20));
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        staff_role.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                staff_roleActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 220, 160, -1));
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 160, 160, -1));
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 190, 160, -1));
+        getContentPane().add(staff_role, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 200, 160, -1));
+        getContentPane().add(staff_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 130, 160, -1));
+        getContentPane().add(phonenumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 160, 160, -1));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -241,14 +246,14 @@ public class Personal_Info extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 190, 150, 20));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 160, 150, 20));
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        staff_name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                staff_nameActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 130, 160, -1));
+        getContentPane().add(staff_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 100, 160, -1));
 
         jButton3.setText("UPDATE");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -256,7 +261,7 @@ public class Personal_Info extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 260, -1, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 270, -1, -1));
 
         jButton7.setText("DELETE");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -264,10 +269,15 @@ public class Personal_Info extends javax.swing.JFrame {
                 jButton7ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 260, -1, -1));
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 270, -1, -1));
 
         jButton8.setText("CREATE");
-        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 260, -1, -1));
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 270, -1, -1));
 
         jButton9.setText("SEARCH");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
@@ -275,7 +285,7 @@ public class Personal_Info extends javax.swing.JFrame {
                 jButton9ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 260, -1, -1));
+        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 270, -1, -1));
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -352,20 +362,20 @@ public class Personal_Info extends javax.swing.JFrame {
 
         getContentPane().add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 330, 100, 20));
 
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        contact_info.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                contact_infoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 360, 350, -1));
-        getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 390, 350, -1));
+        getContentPane().add(contact_info, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 360, 350, -1));
+        getContentPane().add(customer_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 390, 350, -1));
 
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+        customer_name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
+                customer_nameActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 330, 350, -1));
+        getContentPane().add(customer_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 330, 350, -1));
 
         jButton4.setText("UPDATE");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -402,16 +412,69 @@ public class Personal_Info extends javax.swing.JFrame {
         });
         getContentPane().add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 430, -1, -1));
 
+        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel15.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel15.setText("Salary");
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(jLabel15)
+                .addContainerGap(83, Short.MAX_VALUE))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addComponent(jLabel15)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 230, 150, 20));
+
+        staff_salary.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                staff_salaryActionPerformed(evt);
+            }
+        });
+        getContentPane().add(staff_salary, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 230, 160, -1));
+
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/pexels-photo-1957478.jpeg"))); // NOI18N
         jLabel14.setText("jLabel14");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, -10, -1, -1));
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, -10, -1, -1));
+
+        jPanel10.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel16.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel16.setText("Role");
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(jLabel16)
+                .addContainerGap(92, Short.MAX_VALUE))
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addComponent(jLabel16)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 190, 150, 20));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void staff_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staff_nameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_staff_nameActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
@@ -425,13 +488,13 @@ public class Personal_Info extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton9ActionPerformed
 
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+    private void customer_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customer_nameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
+    }//GEN-LAST:event_customer_nameActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void contact_infoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contact_infoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_contact_infoActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
@@ -449,9 +512,17 @@ public class Personal_Info extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton13ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void staff_roleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staff_roleActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_staff_roleActionPerformed
+
+    private void staff_salaryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staff_salaryActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_staff_salaryActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -489,7 +560,10 @@ public class Personal_Info extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField contact_info;
     private javax.swing.JTable customer;
+    private javax.swing.JTextField customer_id;
+    private javax.swing.JTextField customer_name;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
@@ -505,6 +579,8 @@ public class Personal_Info extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -512,6 +588,7 @@ public class Personal_Info extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -519,15 +596,14 @@ public class Personal_Info extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField phonenumber;
     private javax.swing.JTable staff;
+    private javax.swing.JTextField staff_id;
+    private javax.swing.JTextField staff_name;
+    private javax.swing.JTextField staff_role;
+    private javax.swing.JTextField staff_salary;
     // End of variables declaration//GEN-END:variables
 }

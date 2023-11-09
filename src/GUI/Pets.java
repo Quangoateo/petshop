@@ -3,7 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package GUI;
-
+import CONTROLLER.Pet;
+import CONTROLLER.PetPreparedStatement;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author USER
@@ -52,13 +55,13 @@ public class Pets extends javax.swing.JPanel {
         jLabel12 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
+        PET_PRICE = new javax.swing.JTextField();
+        PRODUCT_AGE = new javax.swing.JTextField();
+        PET_BREED = new javax.swing.JTextField();
+        PET_AGE = new javax.swing.JTextField();
+        PET_NAME = new javax.swing.JTextField();
+        PRODUCT_NAME = new javax.swing.JTextField();
+        PRODUCT_ID = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -70,6 +73,11 @@ public class Pets extends javax.swing.JPanel {
         jButton9 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                formComponentShown(evt);
+            }
+        });
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
@@ -79,10 +87,7 @@ public class Pets extends javax.swing.JPanel {
 
         PET_INFO.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "NAME", "BREED", "AGE", "PRICE"
@@ -140,10 +145,7 @@ public class Pets extends javax.swing.JPanel {
 
         Product_info.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
                 "NAME", "PRODUCT_ID", "PRICE"
@@ -358,37 +360,37 @@ public class Pets extends javax.swing.JPanel {
         );
 
         add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 80, 20));
-        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 350, -1));
+        add(PET_PRICE, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 350, -1));
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        PRODUCT_AGE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                PRODUCT_AGEActionPerformed(evt);
             }
         });
-        add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 430, 350, -1));
-        add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 350, -1));
-        add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 350, -1));
+        add(PRODUCT_AGE, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 430, 350, -1));
+        add(PET_BREED, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 350, -1));
+        add(PET_AGE, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 350, -1));
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        PET_NAME.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                PET_NAMEActionPerformed(evt);
             }
         });
-        add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 350, -1));
+        add(PET_NAME, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 350, -1));
 
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        PRODUCT_NAME.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                PRODUCT_NAMEActionPerformed(evt);
             }
         });
-        add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 350, -1));
+        add(PRODUCT_NAME, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 350, -1));
 
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        PRODUCT_ID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                PRODUCT_IDActionPerformed(evt);
             }
         });
-        add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 400, 350, -1));
+        add(PRODUCT_ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 400, 350, -1));
 
         jButton1.setText("DELETE");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -449,24 +451,32 @@ public class Pets extends javax.swing.JPanel {
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/pexels-photo-1108099.jpeg"))); // NOI18N
         jLabel5.setText("jLabel5");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, -10, 1260, 760));
+        jLabel5.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                jLabel5ComponentShown(evt);
+            }
+        });
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, -10, 1260, 760));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void PRODUCT_AGEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PRODUCT_AGEActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_PRODUCT_AGEActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void PET_NAMEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PET_NAMEActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+        
+      
+        
+    }//GEN-LAST:event_PET_NAMEActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void PRODUCT_NAMEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PRODUCT_NAMEActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_PRODUCT_NAMEActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void PRODUCT_IDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PRODUCT_IDActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_PRODUCT_IDActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -492,9 +502,33 @@ public class Pets extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton9ActionPerformed
 
+    private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
+        // TODO add your handling code here:
+        DefaultTableModel dtm = (DefaultTableModel) PET_INFO.getModel();
+        ArrayList<Pet> list = PetPreparedStatement.Display();
+        for (Pet p : list) {
+            dtm.addRow(new Object[]
+            {p.getName(),p.getBreed(),p.getAge(),p.getPrice()} );
+        }
+        
+        
+    }//GEN-LAST:event_formComponentShown
+
+    private void jLabel5ComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jLabel5ComponentShown
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jLabel5ComponentShown
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField PET_AGE;
+    private javax.swing.JTextField PET_BREED;
     private javax.swing.JTable PET_INFO;
+    private javax.swing.JTextField PET_NAME;
+    private javax.swing.JTextField PET_PRICE;
+    private javax.swing.JTextField PRODUCT_AGE;
+    private javax.swing.JTextField PRODUCT_ID;
+    private javax.swing.JTextField PRODUCT_NAME;
     private javax.swing.JTable Product_info;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -530,12 +564,5 @@ public class Pets extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
     // End of variables declaration//GEN-END:variables
 }
