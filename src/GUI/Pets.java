@@ -1,20 +1,23 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package GUI;
 import CONTROLLER.Pet;
 import CONTROLLER.PetPreparedStatement;
+import DATABASE.db_operations;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author USER
  */
-public class Pets extends javax.swing.JPanel {
+public class Pets extends javax.swing.JFrame {
 
     /**
-     * Creates new form Pets
+     * Creates new form pet_table
      */
     public Pets() {
         initComponents();
@@ -32,7 +35,6 @@ public class Pets extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         PET_INFO = new javax.swing.JTable();
-        jPanel1 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -62,28 +64,32 @@ public class Pets extends javax.swing.JPanel {
         PET_NAME = new javax.swing.JTextField();
         PRODUCT_NAME = new javax.swing.JTextField();
         PRODUCT_ID = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        delete_product = new javax.swing.JButton();
+        update_product = new javax.swing.JButton();
+        update_pet = new javax.swing.JButton();
+        search_product = new javax.swing.JButton();
+        create_product = new javax.swing.JButton();
+        delete_pet = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
+        create_pet = new javax.swing.JButton();
+        search_pet = new javax.swing.JButton();
+        back_menu = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        Exit = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
                 formComponentShown(evt);
             }
         });
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 30)); // NOI18N
         jLabel1.setText("PETS MANAGEMENT SYSTEM");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 480, 40));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 21, 450, -1));
 
         PET_INFO.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -101,22 +107,14 @@ public class Pets extends javax.swing.JPanel {
                 return types [columnIndex];
             }
         });
+        PET_INFO.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                PET_INFOComponentShown(evt);
+            }
+        });
         jScrollPane1.setViewportView(PET_INFO);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 140, 430, 100));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(2430, 218, -1, -1));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 110, 520, 140));
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -128,20 +126,20 @@ public class Pets extends javax.swing.JPanel {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+            .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jLabel3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 270, 170, -1));
+        getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 280, 170, -1));
 
         Product_info.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -161,7 +159,7 @@ public class Pets extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(Product_info);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 360, 440, 86));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 330, 520, 190));
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -183,10 +181,10 @@ public class Pets extends javax.swing.JPanel {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel9)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
-        add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 80, -1, 40));
+        getContentPane().add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 50, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -209,7 +207,7 @@ public class Pets extends javax.swing.JPanel {
                 .addGap(0, 5, Short.MAX_VALUE))
         );
 
-        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 60, 20));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -238,7 +236,7 @@ public class Pets extends javax.swing.JPanel {
                 .addComponent(jLabel4))
         );
 
-        add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 60, 20));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, 20));
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -261,7 +259,7 @@ public class Pets extends javax.swing.JPanel {
                 .addGap(0, 5, Short.MAX_VALUE))
         );
 
-        add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 60, 20));
+        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -284,7 +282,7 @@ public class Pets extends javax.swing.JPanel {
                 .addGap(0, 5, Short.MAX_VALUE))
         );
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 60, 20));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -297,7 +295,7 @@ public class Pets extends javax.swing.JPanel {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
@@ -307,7 +305,7 @@ public class Pets extends javax.swing.JPanel {
                 .addGap(0, 5, Short.MAX_VALUE))
         );
 
-        add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 80, 20));
+        getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, -1, -1));
 
         jPanel9.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -336,7 +334,7 @@ public class Pets extends javax.swing.JPanel {
                 .addComponent(jLabel11))
         );
 
-        add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, 80, 20));
+        getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, -1, 20));
 
         jPanel10.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -359,76 +357,76 @@ public class Pets extends javax.swing.JPanel {
                 .addGap(0, 5, Short.MAX_VALUE))
         );
 
-        add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 80, 20));
-        add(PET_PRICE, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 350, -1));
+        getContentPane().add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, -1, -1));
+        getContentPane().add(PET_PRICE, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 350, -1));
 
         PRODUCT_AGE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PRODUCT_AGEActionPerformed(evt);
             }
         });
-        add(PRODUCT_AGE, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 430, 350, -1));
-        add(PET_BREED, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 350, -1));
-        add(PET_AGE, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 350, -1));
+        getContentPane().add(PRODUCT_AGE, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 400, 350, -1));
+        getContentPane().add(PET_BREED, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 350, -1));
+        getContentPane().add(PET_AGE, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 350, -1));
 
         PET_NAME.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PET_NAMEActionPerformed(evt);
             }
         });
-        add(PET_NAME, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 350, -1));
+        getContentPane().add(PET_NAME, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 350, -1));
 
         PRODUCT_NAME.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PRODUCT_NAMEActionPerformed(evt);
             }
         });
-        add(PRODUCT_NAME, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 350, -1));
+        getContentPane().add(PRODUCT_NAME, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, 350, -1));
 
         PRODUCT_ID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PRODUCT_IDActionPerformed(evt);
             }
         });
-        add(PRODUCT_ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 400, 350, -1));
+        getContentPane().add(PRODUCT_ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, 350, -1));
 
-        jButton1.setText("DELETE");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        delete_product.setText("DELETE");
+        delete_product.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                delete_productActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 480, -1, -1));
+        getContentPane().add(delete_product, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 450, -1, -1));
 
-        jButton2.setText("UPDATE");
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 480, -1, -1));
+        update_product.setText("UPDATE");
+        getContentPane().add(update_product, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 450, -1, -1));
 
-        jButton3.setText("UPDATE");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        update_pet.setText("UPDATE");
+        update_pet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                update_petActionPerformed(evt);
             }
         });
-        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, -1, -1));
+        getContentPane().add(update_pet, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, -1, -1));
 
-        jButton4.setText("SEARCH");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        search_product.setText("SEARCH");
+        search_product.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                search_productActionPerformed(evt);
             }
         });
-        add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, -1, -1));
+        getContentPane().add(search_product, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, -1, -1));
 
-        jButton5.setText("CREATE");
-        add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, 80, -1));
+        create_product.setText("CREATE");
+        getContentPane().add(create_product, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 450, 80, -1));
 
-        jButton6.setText("DELETE");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        delete_pet.setText("DELETE");
+        delete_pet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                delete_petActionPerformed(evt);
             }
         });
-        add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 240, -1, -1));
+        getContentPane().add(delete_pet, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, -1, -1));
 
         jButton7.setText("DELETE");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -436,27 +434,53 @@ public class Pets extends javax.swing.JPanel {
                 jButton7ActionPerformed(evt);
             }
         });
-        add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 240, -1, -1));
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, -1, -1));
 
-        jButton8.setText("CREATE");
-        add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, -1, -1));
-
-        jButton9.setText("SEARCH");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        create_pet.setText("CREATE");
+        create_pet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                create_petActionPerformed(evt);
             }
         });
-        add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, -1));
+        getContentPane().add(create_pet, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, -1, -1));
+
+        search_pet.setText("SEARCH");
+        search_pet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                search_petActionPerformed(evt);
+            }
+        });
+        getContentPane().add(search_pet, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, -1));
+
+        back_menu.setText("BACK TO MENU");
+        back_menu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                back_menuActionPerformed(evt);
+            }
+        });
+        getContentPane().add(back_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 600, 190, 40));
+
+        jButton1.setText("MOVE TO PERSONAL INFO");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 600, 210, 40));
+
+        Exit.setText("EXIT");
+        Exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExitActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 600, 190, 40));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/pexels-photo-1108099.jpeg"))); // NOI18N
         jLabel5.setText("jLabel5");
-        jLabel5.addComponentListener(new java.awt.event.ComponentAdapter() {
-            public void componentShown(java.awt.event.ComponentEvent evt) {
-                jLabel5ComponentShown(evt);
-            }
-        });
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, -10, 1260, 760));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, -1, -1));
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void PRODUCT_AGEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PRODUCT_AGEActionPerformed
@@ -465,9 +489,7 @@ public class Pets extends javax.swing.JPanel {
 
     private void PET_NAMEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PET_NAMEActionPerformed
         // TODO add your handling code here:
-        
-      
-        
+
     }//GEN-LAST:event_PET_NAMEActionPerformed
 
     private void PRODUCT_NAMEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PRODUCT_NAMEActionPerformed
@@ -478,49 +500,118 @@ public class Pets extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_PRODUCT_IDActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void delete_productActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_productActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_delete_productActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void update_petActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_petActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_update_petActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void search_productActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_productActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_search_productActionPerformed
+
+    private void delete_petActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_petActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_delete_petActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton7ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void create_petActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_create_petActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+        System.out.println("Pet created");
+        
+    }//GEN-LAST:event_create_petActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+    private void search_petActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_petActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton9ActionPerformed
+    }//GEN-LAST:event_search_petActionPerformed
 
     private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
         // TODO add your handling code here:
-        DefaultTableModel dtm = (DefaultTableModel) PET_INFO.getModel();
-        ArrayList<Pet> list = PetPreparedStatement.Display();
-        for (Pet p : list) {
-            dtm.addRow(new Object[]
-            {p.getName(),p.getBreed(),p.getAge(),p.getPrice()} );
-        }
-        
-        
+//        DefaultTableModel dtm = (DefaultTableModel) PET_INFO.getModel();
+//        ArrayList<Pet> list = PetPreparedStatement.Display();
+//        for (Pet p : list) {
+//            dtm.addRow(new Object[]
+//            {p.getName(),p.getBreed(),p.getAge(),p.getPrice()} );
+//        }
     }//GEN-LAST:event_formComponentShown
 
-    private void jLabel5ComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jLabel5ComponentShown
+    private void back_menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_menuActionPerformed
+       
+        setVisible(false);
+        new Login_form().setVisible(true);
+        
+    }//GEN-LAST:event_back_menuActionPerformed
+
+    private void PET_INFOComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_PET_INFOComponentShown
+        // TODO add your handling code here:
+        DefaultTableModel dtm = (DefaultTableModel) PET_INFO.getModel();
+        ArrayList<Pet> listdisplay = PetPreparedStatement.Display();
+        for(Pet p : listdisplay){
+                dtm.addRow(new Object[]
+                {p.getName(),p.getBreed(),p.getAge(),p.getPrice()} );
+        }
+    }//GEN-LAST:event_PET_INFOComponentShown
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
-    }//GEN-LAST:event_jLabel5ComponentShown
+        setVisible(false);
+        new Personal_Info().setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
+        // TODO add your handling code here:
+        
+                int a =JOptionPane.showConfirmDialog(null, "confirm closed application","message",JOptionPane.YES_NO_OPTION);
+        if(a==0)
+        {
+            System.exit(0);
+        }
+    }//GEN-LAST:event_ExitActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Pets.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Pets.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Pets.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Pets.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Pets().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Exit;
     private javax.swing.JTextField PET_AGE;
     private javax.swing.JTextField PET_BREED;
     private javax.swing.JTable PET_INFO;
@@ -530,15 +621,13 @@ public class Pets extends javax.swing.JPanel {
     private javax.swing.JTextField PRODUCT_ID;
     private javax.swing.JTextField PRODUCT_NAME;
     private javax.swing.JTable Product_info;
+    private javax.swing.JButton back_menu;
+    private javax.swing.JButton create_pet;
+    private javax.swing.JButton create_product;
+    private javax.swing.JButton delete_pet;
+    private javax.swing.JButton delete_product;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -552,7 +641,6 @@ public class Pets extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -564,5 +652,9 @@ public class Pets extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JButton search_pet;
+    private javax.swing.JButton search_product;
+    private javax.swing.JButton update_pet;
+    private javax.swing.JButton update_product;
     // End of variables declaration//GEN-END:variables
 }

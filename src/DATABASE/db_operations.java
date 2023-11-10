@@ -1,6 +1,4 @@
 package DATABASE;
-
-import DATABASE.connection_provider;
 import java.sql.*;
 import javax.swing.JOptionPane;
 import java.awt.HeadlessException;

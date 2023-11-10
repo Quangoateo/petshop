@@ -1,8 +1,5 @@
-
 package CONTROLLER;
-
 import java.util.ArrayList;
-import CONTROLLER.Pet;
 import java.sql.*;
 import DATABASE.db_operations;
 import javax.swing.JOptionPane;
@@ -15,18 +12,16 @@ public class PetPreparedStatement {
             ResultSet rs = db_operations.getData("SELECT * FROM pet");
             while(rs.next()) {
                 Pet p = new Pet();
-                p.setName(rs.getString("name"));
                 p.setBreed(rs.getString("breed"));
                 p.setAge(rs.getInt("age"));
                 p.setPrice(rs.getDouble("price"));
+                p.setName(rs.getString("name"));
                 pet_array_list.add(p);
             }
         }
-        catch(Exception e) {
+        catch(SQLException e) {
             JOptionPane.showMessageDialog(null, e);
         }
         return pet_array_list ; 
     }
-    
-    
 }

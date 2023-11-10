@@ -1,5 +1,5 @@
 package CONTROLLER;
-public abstract class User {
+public  class User {
     private String name;
     private String contactInfo;
     private int userID;

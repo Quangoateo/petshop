@@ -95,8 +95,7 @@ public class Login_form extends javax.swing.JFrame {
     private void EmailTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailTextFieldActionPerformed
         // TODO add your handling code here:
         
-        
-        
+
     }//GEN-LAST:event_EmailTextFieldActionPerformed
 
     private void button_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_loginActionPerformed
@@ -110,7 +109,7 @@ public class Login_form extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Wrong Email or Password!");
         } else {
             setVisible(false);
-            new Home().setVisible(true);
+            new Pets().setVisible(true);
         }
     }//GEN-LAST:event_button_loginActionPerformed
 
