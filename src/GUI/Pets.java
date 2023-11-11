@@ -485,6 +485,11 @@ public class Pets extends javax.swing.JFrame {
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/pexels-photo-1108099.jpeg"))); // NOI18N
         jLabel5.setText("jLabel5");
+        jLabel5.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                jLabel5ComponentShown(evt);
+            }
+        });
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, -1, -1));
 
         pack();
@@ -590,6 +595,10 @@ public class Pets extends javax.swing.JFrame {
 //            {p.getName(),p.getProductID(),p.getPrice()} );
 //        }
     }//GEN-LAST:event_Product_infoComponentShown
+
+    private void jLabel5ComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jLabel5ComponentShown
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel5ComponentShown
 
     /**
      * @param args the command line arguments
