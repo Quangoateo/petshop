@@ -5,6 +5,8 @@
 package GUI;
 import CONTROLLER.Pet;
 import CONTROLLER.PetPreparedStatement;
+import CONTROLLER.ProductPreparedStatement;
+import CONTROLLER.Product;
 import DATABASE.db_operations;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -155,6 +157,11 @@ public class Pets extends javax.swing.JFrame {
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+        });
+        Product_info.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                Product_infoComponentShown(evt);
             }
         });
         jScrollPane2.setViewportView(Product_info);
@@ -532,12 +539,18 @@ public class Pets extends javax.swing.JFrame {
 
     private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
         // TODO add your handling code here:
-//        DefaultTableModel dtm = (DefaultTableModel) PET_INFO.getModel();
-//        ArrayList<Pet> list = PetPreparedStatement.Display();
-//        for (Pet p : list) {
-//            dtm.addRow(new Object[]
-//            {p.getName(),p.getBreed(),p.getAge(),p.getPrice()} );
-//        }
+        DefaultTableModel dtm = (DefaultTableModel) PET_INFO.getModel();
+        ArrayList<Pet> pet_list = PetPreparedStatement.Display();
+        for (Pet p : pet_list) {
+            dtm.addRow(new Object[]
+            {p.getName(),p.getBreed(),p.getAge(),p.getPrice()} );
+        }
+        DefaultTableModel dm = (DefaultTableModel) Product_info.getModel();
+        ArrayList<Product> product_list = ProductPreparedStatement.Display();
+        for (Product p : product_list) {
+            dm.addRow(new Object[]
+            {p.getName(),p.getProductID(),p.getPrice()} );
+        }
     }//GEN-LAST:event_formComponentShown
 
     private void back_menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_menuActionPerformed
@@ -549,12 +562,6 @@ public class Pets extends javax.swing.JFrame {
 
     private void PET_INFOComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_PET_INFOComponentShown
         // TODO add your handling code here:
-        DefaultTableModel dtm = (DefaultTableModel) PET_INFO.getModel();
-        ArrayList<Pet> listdisplay = PetPreparedStatement.Display();
-        for(Pet p : listdisplay){
-                dtm.addRow(new Object[]
-                {p.getName(),p.getBreed(),p.getAge(),p.getPrice()} );
-        }
     }//GEN-LAST:event_PET_INFOComponentShown
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -573,6 +580,16 @@ public class Pets extends javax.swing.JFrame {
             System.exit(0);
         }
     }//GEN-LAST:event_ExitActionPerformed
+
+    private void Product_infoComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_Product_infoComponentShown
+        // TODO add your handling code here:
+//        DefaultTableModel dtm = (DefaultTableModel) Product_info.getModel();
+//        ArrayList<Product> list = ProductPreparedStatement.Display();
+//        for (Product p : list) {
+//            dtm.addRow(new Object[]
+//            {p.getName(),p.getProductID(),p.getPrice()} );
+//        }
+    }//GEN-LAST:event_Product_infoComponentShown
 
     /**
      * @param args the command line arguments

@@ -1,7 +1,9 @@
 package DATABASE;
+
 import java.sql.*;
 import javax.swing.JOptionPane;
 import java.awt.HeadlessException;
+
 public class db_operations {
     public static void set_or_delete (String query, String message)
     {
