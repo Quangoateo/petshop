@@ -1,10 +1,19 @@
 package CONTROLLER;
 
 public class Pet implements Description {
+    private int id;
     private String name;
     private String breed;
     private int age;
     private double price;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public Pet(String name, String breed, int age, double price) {
         this.name = name;

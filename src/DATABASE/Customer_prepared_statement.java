@@ -21,7 +21,7 @@ public class Customer_prepared_statement {
                 cust = new User();
             }
         } 
-        catch(Exception e) {
+        catch(SQLException e) {
             JOptionPane.showMessageDialog(null, e);
         }
         return cust;

@@ -4,10 +4,10 @@
  */
 package GUI;
 import CONTROLLER.Pet;
+import CONTROLLER.Product;
 import CONTROLLER.PetPreparedStatement;
 import CONTROLLER.ProductPreparedStatement;
-import CONTROLLER.Product;
-import DATABASE.db_operations;
+
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -72,12 +72,14 @@ public class Pets extends javax.swing.JFrame {
         search_product = new javax.swing.JButton();
         create_product = new javax.swing.JButton();
         delete_pet = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
         create_pet = new javax.swing.JButton();
         search_pet = new javax.swing.JButton();
         back_menu = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         Exit = new javax.swing.JButton();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        Pet_id = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -98,11 +100,11 @@ public class Pets extends javax.swing.JFrame {
 
             },
             new String [] {
-                "NAME", "BREED", "AGE", "PRICE"
+                "ID", "NAME", "BREED", "AGE", "PRICE"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Double.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Double.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -148,11 +150,11 @@ public class Pets extends javax.swing.JFrame {
 
             },
             new String [] {
-                "NAME", "PRODUCT_ID", "PRICE"
+                "PRODUCT_ID", "NAME", "PRICE"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Double.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.Double.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -165,6 +167,10 @@ public class Pets extends javax.swing.JFrame {
             }
         });
         jScrollPane2.setViewportView(Product_info);
+        if (Product_info.getColumnModel().getColumnCount() > 0) {
+            Product_info.getColumnModel().getColumn(0).setResizable(false);
+            Product_info.getColumnModel().getColumn(2).setResizable(false);
+        }
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 330, 520, 190));
 
@@ -214,7 +220,7 @@ public class Pets extends javax.swing.JFrame {
                 .addGap(0, 5, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -243,7 +249,7 @@ public class Pets extends javax.swing.JFrame {
                 .addComponent(jLabel4))
         );
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, 20));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, 20));
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -266,7 +272,7 @@ public class Pets extends javax.swing.JFrame {
                 .addGap(0, 5, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
+        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -289,7 +295,7 @@ public class Pets extends javax.swing.JFrame {
                 .addGap(0, 5, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -365,7 +371,13 @@ public class Pets extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, -1, -1));
-        getContentPane().add(PET_PRICE, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 350, -1));
+
+        PET_PRICE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PET_PRICEActionPerformed(evt);
+            }
+        });
+        getContentPane().add(PET_PRICE, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 350, -1));
 
         PRODUCT_AGE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -373,15 +385,15 @@ public class Pets extends javax.swing.JFrame {
             }
         });
         getContentPane().add(PRODUCT_AGE, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 400, 350, -1));
-        getContentPane().add(PET_BREED, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 350, -1));
-        getContentPane().add(PET_AGE, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 350, -1));
+        getContentPane().add(PET_BREED, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 350, -1));
+        getContentPane().add(PET_AGE, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 350, -1));
 
         PET_NAME.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PET_NAMEActionPerformed(evt);
             }
         });
-        getContentPane().add(PET_NAME, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 350, -1));
+        getContentPane().add(PET_NAME, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 350, -1));
 
         PRODUCT_NAME.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -414,7 +426,7 @@ public class Pets extends javax.swing.JFrame {
                 update_petActionPerformed(evt);
             }
         });
-        getContentPane().add(update_pet, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, -1, -1));
+        getContentPane().add(update_pet, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, -1, -1));
 
         search_product.setText("SEARCH");
         search_product.addActionListener(new java.awt.event.ActionListener() {
@@ -433,15 +445,7 @@ public class Pets extends javax.swing.JFrame {
                 delete_petActionPerformed(evt);
             }
         });
-        getContentPane().add(delete_pet, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, -1, -1));
-
-        jButton7.setText("DELETE");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, -1, -1));
+        getContentPane().add(delete_pet, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, -1, -1));
 
         create_pet.setText("CREATE");
         create_pet.addActionListener(new java.awt.event.ActionListener() {
@@ -449,7 +453,7 @@ public class Pets extends javax.swing.JFrame {
                 create_petActionPerformed(evt);
             }
         });
-        getContentPane().add(create_pet, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, -1, -1));
+        getContentPane().add(create_pet, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, -1, -1));
 
         search_pet.setText("SEARCH");
         search_pet.addActionListener(new java.awt.event.ActionListener() {
@@ -457,7 +461,7 @@ public class Pets extends javax.swing.JFrame {
                 search_petActionPerformed(evt);
             }
         });
-        getContentPane().add(search_pet, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, -1));
+        getContentPane().add(search_pet, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, -1));
 
         back_menu.setText("BACK TO MENU");
         back_menu.addActionListener(new java.awt.event.ActionListener() {
@@ -483,6 +487,36 @@ public class Pets extends javax.swing.JFrame {
         });
         getContentPane().add(Exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 600, 190, 40));
 
+        jPanel11.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel14.setText("ID");
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel14)
+                .addContainerGap(40, Short.MAX_VALUE))
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addComponent(jLabel14)
+                .addGap(0, 5, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
+
+        Pet_id.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Pet_idActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Pet_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 350, -1));
+
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/pexels-photo-1108099.jpeg"))); // NOI18N
         jLabel5.setText("jLabel5");
         jLabel5.addComponentListener(new java.awt.event.ComponentAdapter() {
@@ -490,7 +524,7 @@ public class Pets extends javax.swing.JFrame {
                 jLabel5ComponentShown(evt);
             }
         });
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-90, -40, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -526,18 +560,91 @@ public class Pets extends javax.swing.JFrame {
 
     private void delete_petActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_petActionPerformed
         // TODO add your handling code here:
+      String id = Pet_id.getText();
+      int a=  JOptionPane.showConfirmDialog(null,"Confirm Deletion","Select",JOptionPane.YES_NO_CANCEL_OPTION);
+      if(a==0)
+      {
+          PetPreparedStatement.Delete(id);
+          setVisible(false);
+          new Pets().setVisible(true);
+      }
+        
+        
+        
+        
+        
+        
+//        PetPreparedStatement.Delete(p); 
+         //reload the jpanel
+//        DefaultTableModel dtm = (DefaultTableModel) PET_INFO.getModel();
+//        ArrayList<Pet> pet_list = PetPreparedStatement.Display();
+//        for (Pet p2 : pet_list) {
+//            dtm.addRow(new Object[]
+//            {p2.getName(),p2.getBreed(),p2.getAge(),p.getPrice()} );
+//        }
+        
     }//GEN-LAST:event_delete_petActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
 
     private void create_petActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_create_petActionPerformed
         // TODO add your handling code here:
-        System.out.println("Pet created");
+        //this code  implements cresating  new information into PET TABLE
+        Pet p = new Pet();
+        String pet_id =  Pet_id.getText();
+        if(!pet_id.isEmpty())
+        {
+            try{
+                int id = Integer.parseInt(pet_id);
+                p.setId(id);
+            }
+            catch(NumberFormatException e)
+            {
+                System.out.println("Invalid age format"+ pet_id);
+                
+            }
+        }
+        else{
+            System.out.println("Age field is empty");
+        }
+        p.setName(PET_NAME.getText());
+        p.setBreed(PET_BREED.getText());
+        //get the text from the age field
+        String ageText = PET_AGE.getText();
+        if(!ageText.isEmpty())
+        {
+            try{
+                int age = Integer.parseInt(ageText);
+                p.setAge(age);
+            }
+            catch(NumberFormatException e)
+            {
+                System.out.println("Invalid age format"+ ageText);
+                
+            }
+        }
+        else{
+            System.out.println("Age field is empty");
+        }
+        String priceText = PET_PRICE.getText();
+        if(!priceText.isEmpty())
+        {
+                try{
+                    double price = Double.parseDouble(priceText);
+                    p.setPrice(price);
+                }
+                catch(NumberFormatException e)
+                {
+                    System.out.println("Invalid price format"+priceText);
+                }
+        }
+        else{
+            System.out.println("Price field is empty");
+        }
+        PetPreparedStatement.Create(p);
+        setVisible(false);
+        new Pets().setVisible(true);
         
     }//GEN-LAST:event_create_petActionPerformed
-
+    
     private void search_petActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_petActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_search_petActionPerformed
@@ -548,14 +655,17 @@ public class Pets extends javax.swing.JFrame {
         ArrayList<Pet> pet_list = PetPreparedStatement.Display();
         for (Pet p : pet_list) {
             dtm.addRow(new Object[]
-            {p.getName(),p.getBreed(),p.getAge(),p.getPrice()} );
+            {p.getId(),p.getName(),p.getBreed(),p.getAge(),p.getPrice()} );
         }
+        
+        
         DefaultTableModel dm = (DefaultTableModel) Product_info.getModel();
         ArrayList<Product> product_list = ProductPreparedStatement.Display();
         for (Product p : product_list) {
             dm.addRow(new Object[]
             {p.getName(),p.getProductID(),p.getPrice()} );
         }
+        
     }//GEN-LAST:event_formComponentShown
 
     private void back_menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_menuActionPerformed
@@ -579,7 +689,7 @@ public class Pets extends javax.swing.JFrame {
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
         // TODO add your handling code here:
         
-                int a =JOptionPane.showConfirmDialog(null, "confirm closed application","message",JOptionPane.YES_NO_OPTION);
+        int a =JOptionPane.showConfirmDialog(null, "confirm closed application","message",JOptionPane.YES_NO_OPTION);
         if(a==0)
         {
             System.exit(0);
@@ -599,6 +709,14 @@ public class Pets extends javax.swing.JFrame {
     private void jLabel5ComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jLabel5ComponentShown
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel5ComponentShown
+
+    private void PET_PRICEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PET_PRICEActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PET_PRICEActionPerformed
+
+    private void Pet_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pet_idActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Pet_idActionPerformed
 
     /**
      * @param args the command line arguments
@@ -646,6 +764,7 @@ public class Pets extends javax.swing.JFrame {
     private javax.swing.JTextField PRODUCT_AGE;
     private javax.swing.JTextField PRODUCT_ID;
     private javax.swing.JTextField PRODUCT_NAME;
+    private javax.swing.JTextField Pet_id;
     private javax.swing.JTable Product_info;
     private javax.swing.JButton back_menu;
     private javax.swing.JButton create_pet;
@@ -653,12 +772,12 @@ public class Pets extends javax.swing.JFrame {
     private javax.swing.JButton delete_pet;
     private javax.swing.JButton delete_product;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -668,6 +787,7 @@ public class Pets extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
