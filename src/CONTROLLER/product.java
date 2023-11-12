@@ -1,6 +1,6 @@
 package CONTROLLER;
 
-public abstract class product {
+public  class Product {
 
 	// Fields
     public String name;

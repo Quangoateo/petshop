@@ -3,12 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Year3/Source_Code/Java/PETSTORE/src/CONTROLLER/Exe.java</file>
             <file>file:/D:/Year3/Source_Code/Java/PETSTORE/src/GUI/Pets.java</file>
             <file>file:/D:/Year3/Source_Code/Java/PETSTORE/src/GUI/Personal_Info.java</file>
             <file>file:/D:/Year3/Source_Code/Java/PETSTORE/src/GUI/Home.java</file>
             <file>file:/D:/Year3/Source_Code/Java/PETSTORE/src/GUI/Login_form.java</file>
             <file>file:/D:/Year3/Source_Code/Java/PETSTORE/src/DATABASE/db_operations.java</file>
+            <file>file:/D:/Year3/Source_Code/Java/PETSTORE/src/javax/swing/Jframe.java</file>
             <file>file:/D:/Year3/Source_Code/Java/PETSTORE/src/CONTROLLER/Dog.java</file>
             <file>file:/D:/Year3/Source_Code/Java/PETSTORE/src/CONTROLLER/Staff.java</file>
             <file>file:/D:/Year3/Source_Code/Java/PETSTORE/src/CONTROLLER/Pet.java</file>
@@ -16,9 +16,7 @@
             <file>file:/D:/Year3/Source_Code/Java/PETSTORE/src/CONTROLLER/Description.java</file>
             <file>file:/D:/Year3/Source_Code/Java/PETSTORE/src/DATABASE/connection_provider.java</file>
             <file>file:/D:/Year3/Source_Code/Java/PETSTORE/src/CONTROLLER/Product.java</file>
-            <file>file:/D:/Year3/Source_Code/Java/PETSTORE/src/CONTROLLER/User.java</file>
             <file>file:/D:/Year3/Source_Code/Java/PETSTORE/src/Images/pexels-photo-1957478.jpeg</file>
-            <file>file:/D:/Year3/Source_Code/Java/PETSTORE/src/DATABASE/Customer_prepared_statement.java</file>
             <file>file:/D:/Year3/Source_Code/Java/PETSTORE/src/CONTROLLER/PetPreparedStatement.java</file>
             <file>file:/D:/Year3/Source_Code/Java/PETSTORE/src/CONTROLLER/ProductPreparedStatement.java</file>
         </group>

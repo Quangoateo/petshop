@@ -135,6 +135,8 @@ public class Register_form extends javax.swing.JFrame {
 
     private void Back_formActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_formActionPerformed
         // TODO add your handling code here:
+        setVisible(false);
+        new Login_form().setVisible(true);
     }//GEN-LAST:event_Back_formActionPerformed
 
     private void EmailTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailTextFieldActionPerformed

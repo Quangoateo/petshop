@@ -23,4 +23,13 @@ public class ProductPreparedStatement {
         }
         return product_list ;
     }
+    public static void create(Product p )
+    {
+           String sql = "INSERT INTO product(productID,name,price)"+
+                   "VALUES( '"+p.getName()+"',  '"+p.getProductID()+"', '"+p.getPrice()+"')";
+            db_operations.set_or_delete(sql, "Insert successfully!");
+    }
+    
+    
+    
 }

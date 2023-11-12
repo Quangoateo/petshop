@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package GUI;
 import CONTROLLER.Pet;
 import CONTROLLER.Product;
@@ -80,6 +77,7 @@ public class Pets extends javax.swing.JFrame {
         jPanel11 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         Pet_id = new javax.swing.JTextField();
+        Reload = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -517,6 +515,14 @@ public class Pets extends javax.swing.JFrame {
         });
         getContentPane().add(Pet_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 350, -1));
 
+        Reload.setText("Reload");
+        Reload.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ReloadActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Reload, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 600, 180, 40));
+
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/pexels-photo-1108099.jpeg"))); // NOI18N
         jLabel5.setText("jLabel5");
         jLabel5.addComponentListener(new java.awt.event.ComponentAdapter() {
@@ -547,11 +553,30 @@ public class Pets extends javax.swing.JFrame {
     }//GEN-LAST:event_PRODUCT_IDActionPerformed
 
     private void delete_productActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_productActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here
+        
+        
+        
     }//GEN-LAST:event_delete_productActionPerformed
 
     private void update_petActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_petActionPerformed
         // TODO add your handling code here:
+        	Pet p = new Pet();
+		try {
+			p.setId(Integer.parseInt(Pet_id.getText()));
+			p.setName(PET_NAME.getText());
+			p.setBreed(PET_BREED.getText());
+			p.setAge(Integer.parseInt(PET_AGE.getText()));
+			p.setPrice(Double.parseDouble(PET_PRICE.getText()));
+		}
+		catch(NumberFormatException e)
+		{
+			JOptionPane.showMessageDialog(null, e);
+		}
+		PetPreparedStatement.Update(p);
+                //reload
+		setVisible(false);
+		new Pets().setVisible(true);
     }//GEN-LAST:event_update_petActionPerformed
 
     private void search_productActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_productActionPerformed
@@ -568,11 +593,6 @@ public class Pets extends javax.swing.JFrame {
           setVisible(false);
           new Pets().setVisible(true);
       }
-        
-        
-        
-        
-        
         
 //        PetPreparedStatement.Delete(p); 
          //reload the jpanel
@@ -646,7 +666,23 @@ public class Pets extends javax.swing.JFrame {
     }//GEN-LAST:event_create_petActionPerformed
     
     private void search_petActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_petActionPerformed
-        // TODO add your handling code here:
+       // TODO add your handling code here:
+        Pet p = null;
+        try {
+                p = PetPreparedStatement.Search(Integer.parseInt(Pet_id.getText()));
+                if (p == null) {
+                        JOptionPane.showMessageDialog(null, "No pet with such ID!");
+                } else {
+                        DefaultTableModel dtm  =  (DefaultTableModel) PET_INFO.getModel();
+                        dtm.setRowCount(0);
+                        dtm.addRow(new Object[]{p.getAge(),p.getName(),p.getBreed(),p.getId(),p.getPrice()});
+                }
+        }
+        catch(NumberFormatException e)
+        {
+                JOptionPane.showMessageDialog(null, e);
+        }
+        
     }//GEN-LAST:event_search_petActionPerformed
 
     private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
@@ -718,6 +754,15 @@ public class Pets extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Pet_idActionPerformed
 
+    private void ReloadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReloadActionPerformed
+        // TODO add your handling code here:
+         // TODO add your handling code here:
+        setVisible(false);
+        new Pets().setVisible(true);
+        
+        
+    }//GEN-LAST:event_ReloadActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -766,6 +811,7 @@ public class Pets extends javax.swing.JFrame {
     private javax.swing.JTextField PRODUCT_NAME;
     private javax.swing.JTextField Pet_id;
     private javax.swing.JTable Product_info;
+    private javax.swing.JButton Reload;
     private javax.swing.JButton back_menu;
     private javax.swing.JButton create_pet;
     private javax.swing.JButton create_product;

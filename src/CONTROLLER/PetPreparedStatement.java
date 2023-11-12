@@ -4,7 +4,7 @@ import java.sql.*;
 import DATABASE.db_operations;
 import javax.swing.JOptionPane;
 
-public class PetPreparedStatement {
+public  class PetPreparedStatement {
     //displlay to table
     public static ArrayList<Pet> Display()
     {
@@ -40,5 +40,33 @@ public class PetPreparedStatement {
       db_operations.set_or_delete(query,"DELETE SUCCESSFULLY");
       
     }
-    
+    public static Pet Search(int id)
+    {
+        ResultSet rs;
+        Pet p = null;
+        String query = " SELECT * FROM pet WHERE id = '"+id+"' ";
+        rs = db_operations.getData(query);
+        try {
+            while(rs.next()) {
+                p = new Pet();
+                p.setId(rs.getInt("id"));
+                p.setBreed(rs.getString("breed"));
+                p.setAge(rs.getInt("age"));
+                p.setPrice(rs.getDouble("price"));
+                p.setName(rs.getString("name"));
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        return p;
+    }
+   
+    public static void Update(Pet p)
+    {
+        String query = "UPDATE pet"
+                + " SET breed ='"+p.getBreed()+"', age = "+p.getAge()+", price = "+p.getPrice()+", name = '"+p.getName()+"'"
+                + " WHERE id =  "+p.getId()+"";
+        db_operations.set_or_delete(query,"UPDATE SUCCESSFULLY");
+    }
+
 }
