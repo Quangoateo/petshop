@@ -4,8 +4,8 @@ public  class Product {
 
 	// Fields
     public String name;
-    private  int productID;
-    public double price;
+    private int productID;
+    private double price;
 
     public String getName() {
         return name;
