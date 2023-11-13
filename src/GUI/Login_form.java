@@ -109,7 +109,7 @@ public class Login_form extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Wrong Email or Password!");
         } else {
             setVisible(false);
-            new Pets().setVisible(true);
+            new PetInfo().setVisible(true);
         }
     }//GEN-LAST:event_button_loginActionPerformed
 

@@ -13,12 +13,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author USER
  */
-public class Pets extends javax.swing.JFrame {
+public class PetInfo extends javax.swing.JFrame {
 
     /**
      * Creates new form pet_table
      */
-    public Pets() {
+    public PetInfo() {
         initComponents();
     }
 
@@ -57,27 +57,27 @@ public class Pets extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
-        PET_PRICE = new javax.swing.JTextField();
+        PetPrice = new javax.swing.JTextField();
         PRODUCT_PRICE = new javax.swing.JTextField();
-        PET_BREED = new javax.swing.JTextField();
-        PET_AGE = new javax.swing.JTextField();
-        PET_NAME = new javax.swing.JTextField();
+        PetBreed = new javax.swing.JTextField();
+        PetAge = new javax.swing.JTextField();
+        PetName = new javax.swing.JTextField();
         PRODUCT_NAME = new javax.swing.JTextField();
         PRODUCT_ID = new javax.swing.JTextField();
         delete_product = new javax.swing.JButton();
         update_product = new javax.swing.JButton();
-        update_pet = new javax.swing.JButton();
+        updatePet = new javax.swing.JButton();
         search_product = new javax.swing.JButton();
         create_product = new javax.swing.JButton();
-        delete_pet = new javax.swing.JButton();
-        create_pet = new javax.swing.JButton();
-        search_pet = new javax.swing.JButton();
+        deletePet = new javax.swing.JButton();
+        createPet = new javax.swing.JButton();
+        searchPet = new javax.swing.JButton();
         back_menu = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         Exit = new javax.swing.JButton();
         jPanel11 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
-        Pet_id = new javax.swing.JTextField();
+        PetID = new javax.swing.JTextField();
         Reload = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
 
@@ -315,7 +315,7 @@ public class Pets extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 56, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
@@ -379,12 +379,12 @@ public class Pets extends javax.swing.JFrame {
 
         getContentPane().add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, -1, -1));
 
-        PET_PRICE.addActionListener(new java.awt.event.ActionListener() {
+        PetPrice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PET_PRICEActionPerformed(evt);
+                PetPriceActionPerformed(evt);
             }
         });
-        getContentPane().add(PET_PRICE, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 350, -1));
+        getContentPane().add(PetPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 350, -1));
 
         PRODUCT_PRICE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -392,15 +392,15 @@ public class Pets extends javax.swing.JFrame {
             }
         });
         getContentPane().add(PRODUCT_PRICE, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 400, 350, -1));
-        getContentPane().add(PET_BREED, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 350, -1));
-        getContentPane().add(PET_AGE, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 350, -1));
+        getContentPane().add(PetBreed, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 350, -1));
+        getContentPane().add(PetAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 350, -1));
 
-        PET_NAME.addActionListener(new java.awt.event.ActionListener() {
+        PetName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PET_NAMEActionPerformed(evt);
+                PetNameActionPerformed(evt);
             }
         });
-        getContentPane().add(PET_NAME, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 350, -1));
+        getContentPane().add(PetName, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 350, -1));
 
         PRODUCT_NAME.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -432,13 +432,13 @@ public class Pets extends javax.swing.JFrame {
         });
         getContentPane().add(update_product, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 450, -1, -1));
 
-        update_pet.setText("UPDATE");
-        update_pet.addActionListener(new java.awt.event.ActionListener() {
+        updatePet.setText("UPDATE");
+        updatePet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                update_petActionPerformed(evt);
+                updatePetActionPerformed(evt);
             }
         });
-        getContentPane().add(update_pet, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, -1, -1));
+        getContentPane().add(updatePet, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, -1, -1));
 
         search_product.setText("SEARCH");
         search_product.addActionListener(new java.awt.event.ActionListener() {
@@ -456,29 +456,29 @@ public class Pets extends javax.swing.JFrame {
         });
         getContentPane().add(create_product, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 450, 80, -1));
 
-        delete_pet.setText("DELETE");
-        delete_pet.addActionListener(new java.awt.event.ActionListener() {
+        deletePet.setText("DELETE");
+        deletePet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                delete_petActionPerformed(evt);
+                deletePetActionPerformed(evt);
             }
         });
-        getContentPane().add(delete_pet, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, -1, -1));
+        getContentPane().add(deletePet, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, -1, -1));
 
-        create_pet.setText("CREATE");
-        create_pet.addActionListener(new java.awt.event.ActionListener() {
+        createPet.setText("CREATE");
+        createPet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                create_petActionPerformed(evt);
+                createPetActionPerformed(evt);
             }
         });
-        getContentPane().add(create_pet, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, -1, -1));
+        getContentPane().add(createPet, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, -1, -1));
 
-        search_pet.setText("SEARCH");
-        search_pet.addActionListener(new java.awt.event.ActionListener() {
+        searchPet.setText("SEARCH");
+        searchPet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                search_petActionPerformed(evt);
+                searchPetActionPerformed(evt);
             }
         });
-        getContentPane().add(search_pet, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, -1));
+        getContentPane().add(searchPet, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, -1));
 
         back_menu.setText("BACK TO MENU");
         back_menu.addActionListener(new java.awt.event.ActionListener() {
@@ -527,12 +527,12 @@ public class Pets extends javax.swing.JFrame {
 
         getContentPane().add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
 
-        Pet_id.addActionListener(new java.awt.event.ActionListener() {
+        PetID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Pet_idActionPerformed(evt);
+                PetIDActionPerformed(evt);
             }
         });
-        getContentPane().add(Pet_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 350, -1));
+        getContentPane().add(PetID, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 350, -1));
 
         Reload.setText("Reload");
         Reload.addActionListener(new java.awt.event.ActionListener() {
@@ -553,10 +553,10 @@ public class Pets extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_PRODUCT_PRICEActionPerformed
 
-    private void PET_NAMEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PET_NAMEActionPerformed
+    private void PetNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PetNameActionPerformed
         // TODO add your handling code here:
 
-    }//GEN-LAST:event_PET_NAMEActionPerformed
+    }//GEN-LAST:event_PetNameActionPerformed
 
     private void PRODUCT_NAMEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PRODUCT_NAMEActionPerformed
         // TODO add your handling code here:
@@ -574,19 +574,19 @@ public class Pets extends javax.swing.JFrame {
       {
           ProductPreparedStatement.Delete(id);
           setVisible(false);
-          new Pets().setVisible(true);
+          new PetInfo().setVisible(true);
       }
     }//GEN-LAST:event_delete_productActionPerformed
 
-    private void update_petActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_petActionPerformed
+    private void updatePetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatePetActionPerformed
         // TODO add your handling code here:
         	Pet p = new Pet();
 		try {
-			p.setId(Integer.parseInt(Pet_id.getText()));
-			p.setName(PET_NAME.getText());
-			p.setBreed(PET_BREED.getText());
-			p.setAge(Integer.parseInt(PET_AGE.getText()));
-			p.setPrice(Double.parseDouble(PET_PRICE.getText()));
+			p.setId(Integer.parseInt(PetID.getText()));
+			p.setName(PetName.getText());
+			p.setBreed(PetBreed.getText());
+			p.setAge(Integer.parseInt(PetAge.getText()));
+			p.setPrice(Double.parseDouble(PetPrice.getText()));
 		}
 		catch(NumberFormatException e)
 		{
@@ -595,8 +595,8 @@ public class Pets extends javax.swing.JFrame {
 		PetPreparedStatement.Update(p);
                 //reload
 		setVisible(false);
-		new Pets().setVisible(true);
-    }//GEN-LAST:event_update_petActionPerformed
+		new PetInfo().setVisible(true);
+    }//GEN-LAST:event_updatePetActionPerformed
 
     private void search_productActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_productActionPerformed
         // TODO add your handling code here:
@@ -608,33 +608,33 @@ public class Pets extends javax.swing.JFrame {
         
     }//GEN-LAST:event_search_productActionPerformed
 
-    private void delete_petActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_petActionPerformed
+    private void deletePetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletePetActionPerformed
         // TODO add your handling code here:
-      String id = Pet_id.getText();
+      String id = PetID.getText();
       int a=  JOptionPane.showConfirmDialog(null,"Confirm Deletion","Select",JOptionPane.YES_NO_CANCEL_OPTION);
       if(a==0)
       {
           PetPreparedStatement.Delete(id);
           setVisible(false);
-          new Pets().setVisible(true);
+          new PetInfo().setVisible(true);
       }
         
 //        PetPreparedStatement.Delete(p); 
          //reload the jpanel
 //        DefaultTableModel dtm = (DefaultTableModel) PET_INFO.getModel();
 //        ArrayList<Pet> pet_list = PetPreparedStatement.Display();
-//        for (Pet p2 : pet_list) {
+//        for (PetInfo p2 : pet_list) {
 //            dtm.addRow(new Object[]
 //            {p2.getName(),p2.getBreed(),p2.getAge(),p.getPrice()} );
 //        }
         
-    }//GEN-LAST:event_delete_petActionPerformed
+    }//GEN-LAST:event_deletePetActionPerformed
 
-    private void create_petActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_create_petActionPerformed
+    private void createPetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createPetActionPerformed
         // TODO add your handling code here:
         //this code  implements cresating  new information into PET TABLE
         Pet p = new Pet();
-        String pet_id =  Pet_id.getText();
+        String pet_id =  PetID.getText();
         if(!pet_id.isEmpty())
         {
             try{
@@ -650,10 +650,10 @@ public class Pets extends javax.swing.JFrame {
         else{
             System.out.println("Age field is empty");
         }
-        p.setName(PET_NAME.getText());
-        p.setBreed(PET_BREED.getText());
+        p.setName(PetName.getText());
+        p.setBreed(PetBreed.getText());
         //get the text from the age field
-        String ageText = PET_AGE.getText();
+        String ageText = PetAge.getText();
         if(!ageText.isEmpty())
         {
             try{
@@ -669,7 +669,7 @@ public class Pets extends javax.swing.JFrame {
         else{
             System.out.println("Age field is empty");
         }
-        String priceText = PET_PRICE.getText();
+        String priceText = PetPrice.getText();
         if(!priceText.isEmpty())
         {
                 try{
@@ -686,15 +686,15 @@ public class Pets extends javax.swing.JFrame {
         }
         PetPreparedStatement.Create(p);
         setVisible(false);
-        new Pets().setVisible(true);
+        new PetInfo().setVisible(true);
         
-    }//GEN-LAST:event_create_petActionPerformed
+    }//GEN-LAST:event_createPetActionPerformed
     
-    private void search_petActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_petActionPerformed
+    private void searchPetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchPetActionPerformed
        // TODO add your handling code here:
         Pet p = null;
         try {
-                p = PetPreparedStatement.Search(Integer.parseInt(Pet_id.getText()));
+                p = PetPreparedStatement.Search(Integer.parseInt(PetID.getText()));
                 if (p == null) {
                         JOptionPane.showMessageDialog(null, "No pet with such ID!");
                 } else {
@@ -708,7 +708,7 @@ public class Pets extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, e);
         }
         
-    }//GEN-LAST:event_search_petActionPerformed
+    }//GEN-LAST:event_searchPetActionPerformed
 
     private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
         // TODO add your handling code here:
@@ -771,19 +771,19 @@ public class Pets extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel5ComponentShown
 
-    private void PET_PRICEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PET_PRICEActionPerformed
+    private void PetPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PetPriceActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_PET_PRICEActionPerformed
+    }//GEN-LAST:event_PetPriceActionPerformed
 
-    private void Pet_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pet_idActionPerformed
+    private void PetIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PetIDActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Pet_idActionPerformed
+    }//GEN-LAST:event_PetIDActionPerformed
 
     private void ReloadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReloadActionPerformed
         // TODO add your handling code here:
          // TODO add your handling code here:
         setVisible(false);
-        new Pets().setVisible(true);
+        new PetInfo().setVisible(true);
         
         
     }//GEN-LAST:event_ReloadActionPerformed
@@ -828,7 +828,7 @@ public class Pets extends javax.swing.JFrame {
         }
         ProductPreparedStatement.Create(p);
         setVisible(false);
-        new Pets().setVisible(true);
+        new PetInfo().setVisible(true);
         
     }//GEN-LAST:event_create_productActionPerformed
 
@@ -847,7 +847,7 @@ public class Pets extends javax.swing.JFrame {
 		ProductPreparedStatement.Update(p);
                 //reload
 		setVisible(false);
-		new Pets().setVisible(true);
+		new PetInfo().setVisible(true);
     }//GEN-LAST:event_update_productActionPerformed
 
     /**
@@ -867,42 +867,44 @@ public class Pets extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Pets.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pet.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Pets.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pet.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Pets.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pet.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Pets.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pet.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Pets().setVisible(true);
+                new PetInfo().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Exit;
-    private javax.swing.JTextField PET_AGE;
-    private javax.swing.JTextField PET_BREED;
     private javax.swing.JTable PET_INFO;
-    private javax.swing.JTextField PET_NAME;
-    private javax.swing.JTextField PET_PRICE;
     private javax.swing.JTextField PRODUCT_ID;
     private javax.swing.JTextField PRODUCT_NAME;
     private javax.swing.JTextField PRODUCT_PRICE;
-    private javax.swing.JTextField Pet_id;
+    private javax.swing.JTextField PetAge;
+    private javax.swing.JTextField PetBreed;
+    private javax.swing.JTextField PetID;
+    private javax.swing.JTextField PetName;
+    private javax.swing.JTextField PetPrice;
     private javax.swing.JTable Product_info;
     private javax.swing.JButton Reload;
     private javax.swing.JButton back_menu;
-    private javax.swing.JButton create_pet;
+    private javax.swing.JButton createPet;
     private javax.swing.JButton create_product;
-    private javax.swing.JButton delete_pet;
+    private javax.swing.JButton deletePet;
     private javax.swing.JButton delete_product;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
@@ -932,9 +934,9 @@ public class Pets extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JButton search_pet;
+    private javax.swing.JButton searchPet;
     private javax.swing.JButton search_product;
-    private javax.swing.JButton update_pet;
+    private javax.swing.JButton updatePet;
     private javax.swing.JButton update_product;
     // End of variables declaration//GEN-END:variables
 }
