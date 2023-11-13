@@ -716,7 +716,7 @@ public class PetInfo extends javax.swing.JFrame {
         ArrayList<Pet> pet_list = PetPreparedStatement.Display();
         for (Pet p : pet_list) {
             dtm.addRow(new Object[]
-            {p.getId(),p.getName(),p.getBreed(),p.getAge(),p.getPrice()} );
+            {p.getId(),p.getName(),p.getBreed(),p.getAge(),p.getPrice()});
         }
         
 

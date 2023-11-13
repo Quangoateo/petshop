@@ -4,7 +4,7 @@ import java.sql.*;
 import DATABASE.db_operations;
 import javax.swing.JOptionPane;
 
-public  class PetPreparedStatement {
+public class PetPreparedStatement {
     //displlay to table
     public static ArrayList<Pet> Display()
     {
