@@ -79,6 +79,7 @@ public class Pets extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         Pet_id = new javax.swing.JTextField();
         Reload = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/pexels-photo-1108099.jpeg"))); // NOI18N
         jLabel5.setText("jLabel5");
@@ -541,6 +542,10 @@ public class Pets extends javax.swing.JFrame {
         });
         getContentPane().add(Reload, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 600, 180, 40));
 
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/pexels-photo-1108099.jpeg"))); // NOI18N
+        jLabel15.setText("jLabel15");
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(-60, -200, 2070, 980));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -714,7 +719,7 @@ public class Pets extends javax.swing.JFrame {
             {p.getId(),p.getName(),p.getBreed(),p.getAge(),p.getPrice()} );
         }
         
-        
+
         DefaultTableModel dm = (DefaultTableModel) Product_info.getModel();
         ArrayList<Product> product_list = ProductPreparedStatement.Display();
         for (Product p : product_list) {
@@ -906,6 +911,7 @@ public class Pets extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

@@ -40,6 +40,8 @@ public class Register_form extends javax.swing.JFrame {
         ContactInfoTextField = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         NameTextField = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        Role = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -75,7 +77,7 @@ public class Register_form extends javax.swing.JFrame {
                 register_formActionPerformed(evt);
             }
         });
-        getContentPane().add(register_form, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 350, -1, -1));
+        getContentPane().add(register_form, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 380, -1, -1));
 
         Back_form.setText("Back");
         Back_form.addActionListener(new java.awt.event.ActionListener() {
@@ -83,7 +85,7 @@ public class Register_form extends javax.swing.JFrame {
                 Back_formActionPerformed(evt);
             }
         });
-        getContentPane().add(Back_form, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 350, -1, -1));
+        getContentPane().add(Back_form, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 380, -1, -1));
 
         jLabel5.setText("NAME:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, -1, -1));
@@ -104,6 +106,17 @@ public class Register_form extends javax.swing.JFrame {
             }
         });
         getContentPane().add(NameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 300, 380, -1));
+
+        jLabel7.setText("Role");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, -1, -1));
+
+        Role.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Customer", "Admin" }));
+        Role.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RoleActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Role, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 340, 120, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/pexels-photo-1108099.jpeg"))); // NOI18N
         jLabel4.setText("jLabel4");
@@ -142,6 +155,15 @@ public class Register_form extends javax.swing.JFrame {
     private void EmailTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_EmailTextFieldActionPerformed
+
+    private void RoleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RoleActionPerformed
+        // TODO add your handling code here:
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_RoleActionPerformed
 
     /**
      * @param args the command line arguments
@@ -184,12 +206,14 @@ public class Register_form extends javax.swing.JFrame {
     private javax.swing.JTextField EmailTextField;
     private javax.swing.JTextField NameTextField;
     private javax.swing.JTextField PasswordTextField;
+    private javax.swing.JComboBox<String> Role;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JButton register_form;
     // End of variables declaration//GEN-END:variables
 }

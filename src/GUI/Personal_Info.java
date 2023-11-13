@@ -471,6 +471,11 @@ public class Personal_Info extends javax.swing.JFrame {
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/pexels-photo-1957478.jpeg"))); // NOI18N
         jLabel14.setText("jLabel14");
+        jLabel14.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                jLabel14ComponentShown(evt);
+            }
+        });
         getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -546,6 +551,16 @@ public class Personal_Info extends javax.swing.JFrame {
             System.exit(0);
         }
     }//GEN-LAST:event_EXITActionPerformed
+
+    private void jLabel14ComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jLabel14ComponentShown
+        // TODO add your handling code here:
+        
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_jLabel14ComponentShown
 
     /**
      * @param args the command line arguments
