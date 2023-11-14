@@ -1,8 +1,8 @@
 package MODEL;
 
 public class Product {
-    private String name;
     private int productID;
+    private String name;
     private double price;
 
     public String getName() {

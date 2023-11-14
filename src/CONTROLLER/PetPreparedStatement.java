@@ -26,7 +26,7 @@ public class PetPreparedStatement {
         }
         return list;
     }
-    
+
     public static Pet Search(int id) {
         ResultSet rs;
         Pet p = null;
@@ -49,21 +49,21 @@ public class PetPreparedStatement {
 
     public static void Create(Pet p) {
         String sql = "INSERT INTO pet "
-                + "VALUES('"+p.getId()+"', '"+p.getName()+"', '"+p.getBreed()+"', '"+p.getAge()+"', '"+p.getPrice()+"')";
+                + "VALUES('" + p.getId() + "', '" + p.getName() + "', '" + p.getBreed() + "', '" + p.getAge() + "', '" + p.getPrice() + "')";
         db_operations.set_or_delete(sql, "Insert Successfully!");
 
     }
 
     public static void Delete(String id) {
-        String query = "DELETE FROM pet WHERE id =  '"+id+"'";
+        String query = "DELETE FROM pet WHERE id =  '" + id + "'";
         db_operations.set_or_delete(query, "Delete Successfully!");
 
     }
-    
+
     public static void Update(Pet p) {
         String query = "UPDATE pet "
-                + "SET name = '"+p.getName()+"', breed ='"+p.getBreed()+"', age = "+p.getAge()+", price = "+p.getPrice()+" "
-                + "WHERE id =  "+p.getId()+"";
+                + "SET name = '" + p.getName() + "', breed ='" + p.getBreed() + "', age = " + p.getAge() + ", price = " + p.getPrice() + " "
+                + "WHERE id =  " + p.getId() + "";
         db_operations.set_or_delete(query, "Update Successfully!");
     }
 

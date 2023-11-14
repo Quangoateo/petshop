@@ -27,18 +27,16 @@ public class ProductPreparedStatement {
 
     public static void Create(Product p) {
         String sql = "INSERT INTO product "
-                + "VALUES('"+p.getProductID()+"', '"+p.getName()+"', '"+p.getPrice()+"')";
+                + "VALUES('" + p.getProductID() + "', '" + p.getName() + "', '" + p.getPrice() + "')";
         db_operations.set_or_delete(sql, "Insert Successfully!");
     }
 
-    public static Product Search(int id) {
-        ResultSet rs;
-        Product p = null;
-        String query = "SELECT * FROM product WHERE productID = " + id + "";
-        rs = db_operations.getData(query);
+    public static Product Search(String id) {
+        Product p = new Product();
+        String sql = "SELECT * FROM product WHERE productID = " + id + "";
         try {
+            ResultSet rs = db_operations.getData(sql);
             while (rs.next()) {
-                p = new Product();
                 p.setProductID(rs.getInt("productID"));
                 p.setName(rs.getString("name"));
                 p.setPrice(rs.getDouble("price"));
@@ -48,18 +46,16 @@ public class ProductPreparedStatement {
         }
         return p;
     }
-
+    
     public static void Update(Product p) {
         String query = "UPDATE product "
-                + "SET price = "+p.getPrice()+", name = '"+p.getName()+"' "
-                + "WHERE productID =  " +p.getProductID()+"";
+                + "SET price = " + p.getPrice() + ", name = '" + p.getName() + "' "
+                + "WHERE productID =  " + p.getProductID() + "";
         db_operations.set_or_delete(query, "Update Successfully!");
     }
 
     public static void Delete(String id) {
         String query = "DELETE FROM product WHERE productID =  '" + id + "'";
         db_operations.set_or_delete(query, "Delete Successfully!");
-
     }
-
 }
