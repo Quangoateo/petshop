@@ -6,6 +6,7 @@ package GUI;
 
 import CONTROLLER.StaffPreparedStatement;
 import MODEL.Staff;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -52,6 +53,11 @@ public class StaffInfo extends javax.swing.JFrame {
         BackToHome = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                formComponentShown(evt);
+            }
+        });
 
         jLabel1.setText("ID");
 
@@ -280,9 +286,18 @@ public class StaffInfo extends javax.swing.JFrame {
             StaffPreparedStatement.Delete(id);
             
             setVisible(false);
-            new PetInfo().setVisible(true);
+            new StaffInfo().setVisible(true);
         }
     }//GEN-LAST:event_StaffDeleteActionPerformed
+
+    private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
+        // TODO add your handling code here:
+        DefaultTableModel dm = (DefaultTableModel) StaffInfo.getModel();
+        ArrayList<Staff> list = StaffPreparedStatement.Display();
+        for (Staff p : list) {
+            dm.addRow(new Object[]{p.getStaffID(), p.getName(), p.getPhoneNumber(), p.getEmail(), p.getPassword()});
+        }
+    }//GEN-LAST:event_formComponentShown
 
     /**
      * @param args the command line arguments
