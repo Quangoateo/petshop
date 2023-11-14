@@ -9,12 +9,21 @@ package GUI;
  * @author TG
  */
 public class Home extends javax.swing.JFrame {
-
+    String adminEmail;
     /**
      * Creates new form Home
      */
     public Home() {
         initComponents();
+    }
+
+    public Home(String email) {
+        initComponents();
+        adminEmail = email;
+        if (!email.equals("admin@gmail.com")) {
+            Staff.setVisible(false);
+        }
+        
     }
 
     /**
@@ -31,6 +40,7 @@ public class Home extends javax.swing.JFrame {
         Staff = new javax.swing.JButton();
         Customer = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        LogOut = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -65,14 +75,24 @@ public class Home extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel2.setText("Home");
 
+        LogOut.setText("Log Out");
+        LogOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LogOutActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(LogOut))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(Product)
                         .addGap(18, 18, 18)
@@ -87,7 +107,9 @@ public class Home extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addComponent(jLabel2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(LogOut))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Product)
@@ -123,6 +145,12 @@ public class Home extends javax.swing.JFrame {
         setVisible(false);
         new StaffInfo().setVisible(true);
     }//GEN-LAST:event_StaffActionPerformed
+
+    private void LogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogOutActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        new LogIn().setVisible(true);
+    }//GEN-LAST:event_LogOutActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,6 +189,7 @@ public class Home extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Customer;
+    private javax.swing.JButton LogOut;
     private javax.swing.JButton Pet;
     private javax.swing.JButton Product;
     private javax.swing.JButton Staff;

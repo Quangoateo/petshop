@@ -77,7 +77,7 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="LogIn">
       <Properties>
-        <Property name="text" type="java.lang.String" value="LogIn"/>
+        <Property name="text" type="java.lang.String" value="Log In"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LogInActionPerformed"/>
@@ -85,7 +85,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="SignUp">
       <Properties>
-        <Property name="text" type="java.lang.String" value="SignUp"/>
+        <Property name="text" type="java.lang.String" value="Move to Sign Up"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SignUpActionPerformed"/>

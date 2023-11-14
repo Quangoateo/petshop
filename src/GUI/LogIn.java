@@ -40,14 +40,14 @@ public class LogIn extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        LogIn.setText("LogIn");
+        LogIn.setText("Log In");
         LogIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LogInActionPerformed(evt);
             }
         });
 
-        SignUp.setText("SignUp");
+        SignUp.setText("Move to Sign Up");
         SignUp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SignUpActionPerformed(evt);
@@ -118,7 +118,7 @@ public class LogIn extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Wrong Email or Password!");
         } else {
             setVisible(false);
-            new Home().setVisible(true);
+            new Home(email).setVisible(true);
         }
     }//GEN-LAST:event_LogInActionPerformed
 
