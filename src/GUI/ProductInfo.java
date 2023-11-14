@@ -4,6 +4,12 @@
  */
 package GUI;
 
+import CONTROLLER.Product;
+import CONTROLLER.ProductPreparedStatement;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author TG
@@ -26,21 +32,231 @@ public class ProductInfo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        ProductID = new javax.swing.JLabel();
+        ProductName = new javax.swing.JLabel();
+        ProductPrice = new javax.swing.JLabel();
+        ProductIDTextField = new javax.swing.JTextField();
+        ProductNameTextField = new javax.swing.JTextField();
+        ProductPriceTextField = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        ProductInfo = new javax.swing.JTable();
+        ProductSearch = new javax.swing.JButton();
+        ProductCreate = new javax.swing.JButton();
+        ProductUpdate = new javax.swing.JButton();
+        ProductDelete = new javax.swing.JButton();
+        ProductReload = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                formComponentShown(evt);
+            }
+        });
+
+        ProductID.setText("Product ID");
+
+        ProductName.setText("Name");
+
+        ProductPrice.setText("Price");
+
+        ProductInfo.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ProductID", "Name", "Price"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(ProductInfo);
+
+        ProductSearch.setText("Search");
+        ProductSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProductSearchActionPerformed(evt);
+            }
+        });
+
+        ProductCreate.setText("Create");
+        ProductCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProductCreateActionPerformed(evt);
+            }
+        });
+
+        ProductUpdate.setText("Update");
+        ProductUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProductUpdateActionPerformed(evt);
+            }
+        });
+
+        ProductDelete.setText("Delete");
+        ProductDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProductDeleteActionPerformed(evt);
+            }
+        });
+
+        ProductReload.setText("Reload");
+        ProductReload.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProductReloadActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ProductID)
+                            .addComponent(ProductName)
+                            .addComponent(ProductPrice))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(ProductIDTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+                            .addComponent(ProductNameTextField)
+                            .addComponent(ProductPriceTextField)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(ProductSearch)
+                        .addGap(18, 18, 18)
+                        .addComponent(ProductCreate)
+                        .addGap(18, 18, 18)
+                        .addComponent(ProductUpdate))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(ProductDelete)
+                        .addGap(18, 18, 18)
+                        .addComponent(ProductReload)))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ProductID)
+                    .addComponent(ProductIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ProductName)
+                    .addComponent(ProductNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ProductPrice)
+                    .addComponent(ProductPriceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ProductSearch)
+                    .addComponent(ProductCreate)
+                    .addComponent(ProductUpdate))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ProductDelete)
+                    .addComponent(ProductReload))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(24, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
+        // TODO add your handling code here:
+        DefaultTableModel dm = (DefaultTableModel) ProductInfo.getModel();
+        ArrayList<Product> product_list = ProductPreparedStatement.Display();
+        for (Product p : product_list) {
+            dm.addRow(new Object[]
+            {p.getProductID(),p.getName(),p.getPrice()} );
+        }
+    }//GEN-LAST:event_formComponentShown
+
+    private void ProductSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductSearchActionPerformed
+        // TODO add your handling code here:
+        Product p = null;
+        try {
+//            p = ProductPreparedStatement.Search(Integer.parseInt(ProductID.getText()));
+            p = ProductPreparedStatement.Search(Integer.parseInt(ProductIDTextField.getText()));
+            if (p == null) {
+                    JOptionPane.showMessageDialog(null, "No product with such ID!");
+            } else {
+                DefaultTableModel dtm  =  (DefaultTableModel) ProductInfo.getModel();
+                dtm.setRowCount(0);
+                dtm.addRow(new Object[]{p.getProductID(),p.getName(),p.getPrice()});
+            }
+        }
+        catch(NumberFormatException e)
+        {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }//GEN-LAST:event_ProductSearchActionPerformed
+
+    private void ProductReloadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductReloadActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        new ProductInfo().setVisible(true);
+    }//GEN-LAST:event_ProductReloadActionPerformed
+
+    private void ProductCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductCreateActionPerformed
+        // TODO add your handling code here:
+        Product p = new Product();
+        String pet_id = ProductIDTextField.getText();
+        try {
+            p.setProductID(Integer.parseInt(ProductIDTextField.getText()));
+            p.setName(ProductNameTextField.getText());
+            p.setPrice(Double.parseDouble(ProductPriceTextField.getText()));
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        ProductPreparedStatement.Create(p);
+        
+        setVisible(false);
+        new ProductInfo().setVisible(true);
+    }//GEN-LAST:event_ProductCreateActionPerformed
+
+    private void ProductUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductUpdateActionPerformed
+        // TODO add your handling code here:
+        Product p = new Product();
+        try {
+            p.setProductID(Integer.parseInt(ProductIDTextField.getText()));
+            p.setName(ProductNameTextField.getText());
+            p.setPrice(Double.parseDouble(ProductPriceTextField.getText()));
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        ProductPreparedStatement.Update(p);
+
+        setVisible(false);
+        new ProductInfo().setVisible(true);
+    }//GEN-LAST:event_ProductUpdateActionPerformed
+
+    private void ProductDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductDeleteActionPerformed
+        // TODO add your handling code here:
+        String id = ProductIDTextField.getText();
+        int a = JOptionPane.showConfirmDialog(null, "Confirm Deletion", "Select", JOptionPane.YES_NO_CANCEL_OPTION);
+        if (a == 0) {
+            ProductPreparedStatement.Delete(id);
+            
+            setVisible(false);
+            new ProductInfo().setVisible(true);
+        }
+    }//GEN-LAST:event_ProductDeleteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +294,18 @@ public class ProductInfo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ProductCreate;
+    private javax.swing.JButton ProductDelete;
+    private javax.swing.JLabel ProductID;
+    private javax.swing.JTextField ProductIDTextField;
+    private javax.swing.JTable ProductInfo;
+    private javax.swing.JLabel ProductName;
+    private javax.swing.JTextField ProductNameTextField;
+    private javax.swing.JLabel ProductPrice;
+    private javax.swing.JTextField ProductPriceTextField;
+    private javax.swing.JButton ProductReload;
+    private javax.swing.JButton ProductSearch;
+    private javax.swing.JButton ProductUpdate;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
