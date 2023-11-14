@@ -1,20 +1,10 @@
 package MODEL;
-
-public abstract class Staff {
-	 // Fields
-    private String name;
+public  class Staff {
     private int staffID;
+    private String name;
     private String phoneNumber;
-    private String role;
-    private float salary;
-    
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+    private String email;
+    private String password;
 
     public int getStaffID() {
         return staffID;
@@ -22,6 +12,14 @@ public abstract class Staff {
 
     public void setStaffID(int staffID) {
         this.staffID = staffID;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPhoneNumber() {
@@ -32,20 +30,19 @@ public abstract class Staff {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getRole() {
-        return role;
+    public String getEmail() {
+        return email;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public float getSalary() {
-        return salary;
+    public String getPassword() {
+        return password;
     }
 
-    public void setSalary(float salary) {
-        this.salary = salary;
+    public void setPassword(String password) {
+        this.password = password;
     }
-    
 }

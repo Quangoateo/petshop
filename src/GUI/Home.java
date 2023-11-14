@@ -26,21 +26,81 @@ public class Home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Pet = new javax.swing.JButton();
+        Product = new javax.swing.JButton();
+        Staff = new javax.swing.JButton();
+        Customer = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        Pet.setText("Pet");
+        Pet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PetActionPerformed(evt);
+            }
+        });
+
+        Product.setText("Product");
+        Product.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProductActionPerformed(evt);
+            }
+        });
+
+        Staff.setText("Staff");
+
+        Customer.setText("Customer");
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel2.setText("Home");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Product)
+                        .addGap(18, 18, 18)
+                        .addComponent(Pet)
+                        .addGap(18, 18, 18)
+                        .addComponent(Customer)
+                        .addGap(18, 18, 18)
+                        .addComponent(Staff)))
+                .addGap(24, 24, 24))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Product)
+                    .addComponent(Pet)
+                    .addComponent(Customer)
+                    .addComponent(Staff))
+                .addGap(33, 33, 33))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        new ProductInfo().setVisible(true);
+    }//GEN-LAST:event_ProductActionPerformed
+
+    private void PetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PetActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        new PetInfo().setVisible(true);
+    }//GEN-LAST:event_PetActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +138,10 @@ public class Home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Customer;
+    private javax.swing.JButton Pet;
+    private javax.swing.JButton Product;
+    private javax.swing.JButton Staff;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

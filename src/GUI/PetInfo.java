@@ -48,7 +48,9 @@ public class PetInfo extends javax.swing.JFrame {
         PetAgeTextField = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         PetPriceTextField = new javax.swing.JTextField();
-        PetReload = new javax.swing.JButton();
+        Reload = new javax.swing.JButton();
+        BackToHome = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addComponentListener(new java.awt.event.ComponentAdapter() {
@@ -113,63 +115,82 @@ public class PetInfo extends javax.swing.JFrame {
 
         jLabel5.setText("Price");
 
-        PetReload.setText("Reload");
-        PetReload.addActionListener(new java.awt.event.ActionListener() {
+        Reload.setText("Reload");
+        Reload.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PetReloadActionPerformed(evt);
+                ReloadActionPerformed(evt);
             }
         });
+
+        BackToHome.setText("Back to Home");
+        BackToHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackToHomeActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel6.setText("Pet");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel3))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(1, 1, 1)
-                                    .addComponent(jLabel5))))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(PetIDTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
-                            .addComponent(PetNameTextField)
-                            .addComponent(PetBreedTextField)
-                            .addComponent(PetAgeTextField)
-                            .addComponent(PetPriceTextField)))
+                        .addComponent(jLabel6)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(PetDelete)
-                            .addComponent(PetSearch))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(PetCreate)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 561, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Reload)
                                 .addGap(18, 18, 18)
-                                .addComponent(PetUpdate))
-                            .addComponent(PetReload))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
+                                .addComponent(BackToHome))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel1)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jLabel4)
+                                                    .addComponent(jLabel3))
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addGap(1, 1, 1)
+                                                    .addComponent(jLabel5))))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(PetIDTextField)
+                                            .addComponent(PetNameTextField)
+                                            .addComponent(PetBreedTextField)
+                                            .addComponent(PetAgeTextField)
+                                            .addComponent(PetPriceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(1, 1, 1)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(PetDelete)
+                                            .addComponent(PetSearch))
+                                        .addGap(18, 18, 18)
+                                        .addComponent(PetCreate)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(PetUpdate)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(32, 32, 32))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(jLabel6)
+                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
                             .addComponent(PetIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -195,20 +216,22 @@ public class PetInfo extends javax.swing.JFrame {
                             .addComponent(PetCreate)
                             .addComponent(PetUpdate))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(PetDelete)
-                            .addComponent(PetReload))))
-                .addContainerGap(113, Short.MAX_VALUE))
+                        .addComponent(PetDelete)))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Reload)
+                    .addComponent(BackToHome))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void PetReloadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PetReloadActionPerformed
+    private void ReloadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReloadActionPerformed
         // TODO add your handling code here:
         setVisible(false);
         new PetInfo().setVisible(true);
-    }//GEN-LAST:event_PetReloadActionPerformed
+    }//GEN-LAST:event_ReloadActionPerformed
 
     private void PetSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PetSearchActionPerformed
         // TODO add your handling code here:
@@ -284,6 +307,12 @@ public class PetInfo extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_PetDeleteActionPerformed
 
+    private void BackToHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackToHomeActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        new Home().setVisible(true);
+    }//GEN-LAST:event_BackToHomeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -321,6 +350,7 @@ public class PetInfo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BackToHome;
     private javax.swing.JTextField PetAgeTextField;
     private javax.swing.JTextField PetBreedTextField;
     private javax.swing.JButton PetCreate;
@@ -329,14 +359,15 @@ public class PetInfo extends javax.swing.JFrame {
     private javax.swing.JTable PetInfo;
     private javax.swing.JTextField PetNameTextField;
     private javax.swing.JTextField PetPriceTextField;
-    private javax.swing.JButton PetReload;
     private javax.swing.JButton PetSearch;
     private javax.swing.JButton PetUpdate;
+    private javax.swing.JButton Reload;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

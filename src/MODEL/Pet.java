@@ -1,7 +1,7 @@
 package MODEL;
 
 public class Pet implements Description {
-    private int id;
+    private int petID;
     private String name;
     private String breed;
     private int age;
@@ -18,11 +18,11 @@ public class Pet implements Description {
     }
     
     public int getId() {
-        return id;
+        return petID;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.petID = petID;
     }
     
     public String getName() {
