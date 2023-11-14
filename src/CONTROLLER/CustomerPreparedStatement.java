@@ -21,7 +21,7 @@ public class CustomerPreparedStatement {
             ResultSet rs = db_operations.getData("SELECT * FROM customer");
             while (rs.next()) {
                 Customer cus = new Customer();
-                cus.setCustomerID(rs.getInt("staffId"));
+                cus.setCustomerID(rs.getInt("customerID"));
                 cus.setName(rs.getString("name"));
                 cus.setPhoneNumber(rs.getString("phoneNumber"));
                 list.add(cus);
@@ -35,7 +35,7 @@ public class CustomerPreparedStatement {
     public static Customer Search(int id) {
         ResultSet rs;
         Customer cus = null;
-        String query = " SELECT * FROM customer WHERE id = '" + id + "' ";
+        String query = " SELECT * FROM customer WHERE customerID = '" + id + "' ";
         rs = db_operations.getData(query);
         try {
             while (rs.next()) {
@@ -57,7 +57,7 @@ public class CustomerPreparedStatement {
     }
 
     public static void Delete(String id) {
-        String sql = "DELETE FROM customer WHERE id =  '" + id + "'";
+        String sql = "DELETE FROM customer WHERE customerID =  '" + id + "'";
         db_operations.set_or_delete(sql, "Delete Successfully!");
 
     }
@@ -65,7 +65,7 @@ public class CustomerPreparedStatement {
     public static void Update(Customer cus) {
         String sql = "UPDATE customer "
                 + "SET name = '" + cus.getName() + "', phoneNumber ='" + cus.getPhoneNumber() + "' "
-                + "WHERE id =  " + cus.getCustomerID() + "";
+                + "WHERE customerID =  " + cus.getCustomerID() + "";
         db_operations.set_or_delete(sql, "Update Successfully!");
     }
 }

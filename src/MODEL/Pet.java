@@ -6,25 +6,15 @@ public class Pet implements Description {
     private String breed;
     private int age;
     private double price;
-    
-    public Pet() {
-    }
-    
-    public Pet(String name, String breed, int age, double price) {
-        this.name = name;
-        this.breed = breed;
-        this.age = age;
-        this.price = price;
-    }
-    
-    public int getId() {
+
+    public int getPetID() {
         return petID;
     }
 
-    public void setId(int id) {
+    public void setPetID(int petID) {
         this.petID = petID;
     }
-    
+
     public String getName() {
         return name;
     }

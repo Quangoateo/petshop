@@ -49,8 +49,18 @@ public class Home extends javax.swing.JFrame {
         });
 
         Staff.setText("Staff");
+        Staff.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StaffActionPerformed(evt);
+            }
+        });
 
         Customer.setText("Customer");
+        Customer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CustomerActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel2.setText("Home");
@@ -101,6 +111,18 @@ public class Home extends javax.swing.JFrame {
         setVisible(false);
         new PetInfo().setVisible(true);
     }//GEN-LAST:event_PetActionPerformed
+
+    private void CustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CustomerActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        new CustomerInfo().setVisible(true);
+    }//GEN-LAST:event_CustomerActionPerformed
+
+    private void StaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StaffActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        new StaffInfo().setVisible(true);
+    }//GEN-LAST:event_StaffActionPerformed
 
     /**
      * @param args the command line arguments

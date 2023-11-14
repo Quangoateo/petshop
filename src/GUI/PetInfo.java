@@ -243,7 +243,7 @@ public class PetInfo extends javax.swing.JFrame {
             } else {
                 DefaultTableModel dtm = (DefaultTableModel) PetInfo.getModel();
                 dtm.setRowCount(0);
-                dtm.addRow(new Object[]{p.getId(), p.getName(), p.getBreed(), p.getAge(), p.getPrice()});
+                dtm.addRow(new Object[]{p.getPetID(), p.getName(), p.getBreed(), p.getAge(), p.getPrice()});
             }
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, e);
@@ -255,7 +255,7 @@ public class PetInfo extends javax.swing.JFrame {
         DefaultTableModel dm = (DefaultTableModel) PetInfo.getModel();
         ArrayList<Pet> list = PetPreparedStatement.Display();
         for (Pet p : list) {
-            dm.addRow(new Object[]{p.getId(), p.getName(), p.getBreed(), p.getAge(), p.getPrice()});
+            dm.addRow(new Object[]{p.getPetID(), p.getName(), p.getBreed(), p.getAge(), p.getPrice()});
         }
     }//GEN-LAST:event_formComponentShown
 
@@ -263,7 +263,7 @@ public class PetInfo extends javax.swing.JFrame {
         // TODO add your handling code here:
         Pet p = new Pet();
         try {
-            p.setId(Integer.parseInt(PetIDTextField.getText()));
+            p.setPetID(Integer.parseInt(PetIDTextField.getText()));
             p.setName(PetNameTextField.getText());
             p.setBreed(PetBreedTextField.getText());
             p.setAge(Integer.parseInt(PetAgeTextField.getText()));
@@ -281,7 +281,7 @@ public class PetInfo extends javax.swing.JFrame {
         // TODO add your handling code here:
         Pet p = new Pet();
         try {
-            p.setId(Integer.parseInt(PetIDTextField.getText()));
+            p.setPetID(Integer.parseInt(PetIDTextField.getText()));
             p.setName(PetNameTextField.getText());
             p.setBreed(PetBreedTextField.getText());
             p.setAge(Integer.parseInt(PetAgeTextField.getText()));

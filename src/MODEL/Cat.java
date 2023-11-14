@@ -9,10 +9,6 @@ package MODEL;
  * @author TG
  */
 public class Cat extends Pet {
-
-    public Cat(String name, String breed, int age, double price) {
-        super(name, breed, age, price);
-    }
     
     @Override
     public String getDescription() {

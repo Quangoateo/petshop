@@ -14,7 +14,7 @@ public class PetPreparedStatement {
             ResultSet rs = db_operations.getData("SELECT * FROM pet");
             while (rs.next()) {
                 Pet p = new Pet();
-                p.setId(rs.getInt("id"));
+                p.setPetID(rs.getInt("petId"));
                 p.setName(rs.getString("name"));
                 p.setBreed(rs.getString("breed"));
                 p.setAge(rs.getInt("age"));
@@ -30,12 +30,12 @@ public class PetPreparedStatement {
     public static Pet Search(int id) {
         ResultSet rs;
         Pet p = null;
-        String query = " SELECT * FROM pet WHERE id = '" + id + "' ";
+        String query = " SELECT * FROM pet WHERE petId = '" + id + "' ";
         rs = db_operations.getData(query);
         try {
             while (rs.next()) {
                 p = new Pet();
-                p.setId(rs.getInt("id"));
+                p.setPetID(rs.getInt("petId"));
                 p.setName(rs.getString("name"));
                 p.setBreed(rs.getString("breed"));
                 p.setAge(rs.getInt("age"));
@@ -49,13 +49,13 @@ public class PetPreparedStatement {
 
     public static void Create(Pet p) {
         String sql = "INSERT INTO pet "
-                + "VALUES('" + p.getId() + "', '" + p.getName() + "', '" + p.getBreed() + "', '" + p.getAge() + "', '" + p.getPrice() + "')";
+                + "VALUES('" + p.getPetID() + "', '" + p.getName() + "', '" + p.getBreed() + "', '" + p.getAge() + "', '" + p.getPrice() + "')";
         db_operations.set_or_delete(sql, "Insert Successfully!");
 
     }
 
     public static void Delete(String id) {
-        String query = "DELETE FROM pet WHERE id =  '" + id + "'";
+        String query = "DELETE FROM pet WHERE petId =  '" + id + "'";
         db_operations.set_or_delete(query, "Delete Successfully!");
 
     }
@@ -63,7 +63,7 @@ public class PetPreparedStatement {
     public static void Update(Pet p) {
         String query = "UPDATE pet "
                 + "SET name = '" + p.getName() + "', breed ='" + p.getBreed() + "', age = " + p.getAge() + ", price = " + p.getPrice() + " "
-                + "WHERE id =  " + p.getId() + "";
+                + "WHERE petId =  " + p.getPetID() + "";
         db_operations.set_or_delete(query, "Update Successfully!");
     }
 
