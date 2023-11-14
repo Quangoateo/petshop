@@ -1,11 +1,9 @@
 package CONTROLLER;
 
-public  class Product {
-
-	// Fields
-    public String name;
-    private  int productID;
-    public double price;
+public class Product {
+    private String name;
+    private int productID;
+    private double price;
 
     public String getName() {
         return name;
