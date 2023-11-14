@@ -39,6 +39,7 @@ public class CustomerPreparedStatement {
         rs = db_operations.getData(query);
         try {
             while (rs.next()) {
+                cus = new Customer();
                 cus.setCustomerID(rs.getInt("customerId"));
                 cus.setName(rs.getString("name"));
                 cus.setPhoneNumber(rs.getString("phoneNumber"));

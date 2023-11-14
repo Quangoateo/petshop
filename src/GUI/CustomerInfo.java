@@ -271,8 +271,8 @@ public class CustomerInfo extends javax.swing.JFrame {
         // TODO add your handling code here:
         DefaultTableModel dm = (DefaultTableModel) CustomerInfo.getModel();
         ArrayList<Customer> list = CustomerPreparedStatement.Display();
-        for (Customer p : list) {
-            dm.addRow(new Object[]{p.getCustomerID(), p.getName(), p.getPhoneNumber()});
+        for (Customer cus : list) {
+            dm.addRow(new Object[]{cus.getCustomerID(), cus.getName(), cus.getPhoneNumber()});
         }
     }//GEN-LAST:event_formComponentShown
 

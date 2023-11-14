@@ -54,6 +54,7 @@ public class StaffPreparedStatement {
         rs = db_operations.getData(query);
         try {
             while (rs.next()) {
+                staff = new Staff();
                 staff.setStaffID(rs.getInt("staffId"));
                 staff.setName(rs.getString("name"));
                 staff.setPhoneNumber(rs.getString("phoneNumber"));

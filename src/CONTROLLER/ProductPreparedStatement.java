@@ -32,11 +32,12 @@ public class ProductPreparedStatement {
     }
 
     public static Product Search(String id) {
-        Product p = new Product();
+        Product p = null;
         String sql = "SELECT * FROM product WHERE productID = " + id + "";
         try {
             ResultSet rs = db_operations.getData(sql);
             while (rs.next()) {
+                p = new Product();
                 p.setProductID(rs.getInt("productID"));
                 p.setName(rs.getString("name"));
                 p.setPrice(rs.getDouble("price"));
