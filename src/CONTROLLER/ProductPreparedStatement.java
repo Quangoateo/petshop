@@ -1,5 +1,6 @@
 package CONTROLLER;
 
+import MODEL.Product;
 import java.sql.*;
 import java.util.*;
 import DATABASE.db_operations;
@@ -25,10 +26,11 @@ public class ProductPreparedStatement {
     }
 
     public static void Create(Product p) {
-        String sql = "INSERT INTO product(productID,name,price) VALUES( '" + p.getProductID() + "', '" + p.getName() + "','" + p.getPrice() + "')";
+        String sql = "INSERT INTO product "
+                + "VALUES('"+p.getProductID()+"', '"+p.getName()+"', '"+p.getPrice()+"')";
         db_operations.set_or_delete(sql, "Insert Successfully!");
     }
-    
+
     public static Product Search(int id) {
         ResultSet rs;
         Product p = null;
@@ -49,13 +51,13 @@ public class ProductPreparedStatement {
 
     public static void Update(Product p) {
         String query = "UPDATE product "
-                + "SET price = " + p.getPrice() + ", name = '" + p.getName() + "' "
-                + "WHERE productID =  " + p.getProductID() + "";
+                + "SET price = "+p.getPrice()+", name = '"+p.getName()+"' "
+                + "WHERE productID =  " +p.getProductID()+"";
         db_operations.set_or_delete(query, "Update Successfully!");
     }
-    
+
     public static void Delete(String id) {
-        String query = "DELETE FROM product WHERE productID =  '"+id+"'";
+        String query = "DELETE FROM product WHERE productID =  '" + id + "'";
         db_operations.set_or_delete(query, "Delete Successfully!");
 
     }

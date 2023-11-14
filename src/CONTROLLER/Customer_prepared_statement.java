@@ -1,5 +1,6 @@
-package DATABASE;
-import CONTROLLER.User;
+package CONTROLLER;
+import DATABASE.db_operations;
+import MODEL.User;
 import java.sql.*;
 import javax.swing.JOptionPane;
 

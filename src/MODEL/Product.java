@@ -1,4 +1,4 @@
-package CONTROLLER;
+package MODEL;
 
 public class Product {
     private String name;

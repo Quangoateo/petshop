@@ -1,4 +1,4 @@
-package CONTROLLER;
+package MODEL;
 public  class User {
     private String name;
     private String contactInfo;

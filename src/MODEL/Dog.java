@@ -2,24 +2,25 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package CONTROLLER;
+package MODEL;
 
 /**
  *
  * @author TG
  */
-public class Cat extends Pet {
+public class Dog extends Pet{
 
-    public Cat(String name, String breed, int age, double price) {
+    public Dog(String name, String breed, int age, double price) {
         super(name, breed, age, price);
     }
     
     @Override
     public String getDescription() {
-        return "Name: " + getName() +
-               ", Breed: " + getBreed() +
-               ", Age: " + getAge() +
-               ", Price: $" + getPrice();
+        return "This is a dog. It's a loyal and friendly pet." +
+               "\nName: " + getName() +
+               "\nBreed: " + getBreed() +
+               "\nAge: " + getAge() +
+               "\nPrice: $" + getPrice();
     }
     
     @Override
@@ -27,7 +28,7 @@ public class Cat extends Pet {
         String output;
         switch(parameter) {
             case "Species":
-                output = "This is a cat. It's an independent and playful pet.";
+                output = "This is a dog. It's a loyal and friendly pet.";
                 break;
             case "Name":
                 output = "Name: " + getName();

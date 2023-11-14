@@ -4,7 +4,7 @@
  */
 package GUI;
 
-import CONTROLLER.Product;
+import MODEL.Product;
 import CONTROLLER.ProductPreparedStatement;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -140,38 +140,39 @@ public class ProductInfo extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(ProductReload)))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 428, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ProductID)
-                    .addComponent(ProductIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ProductName)
-                    .addComponent(ProductNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ProductPrice)
-                    .addComponent(ProductPriceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ProductSearch)
-                    .addComponent(ProductCreate)
-                    .addComponent(ProductUpdate))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ProductDelete)
-                    .addComponent(ProductReload))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(24, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ProductID)
+                            .addComponent(ProductIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ProductName)
+                            .addComponent(ProductNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ProductPrice)
+                            .addComponent(ProductPriceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ProductSearch)
+                            .addComponent(ProductCreate)
+                            .addComponent(ProductUpdate))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ProductDelete)
+                            .addComponent(ProductReload))))
+                .addContainerGap(177, Short.MAX_VALUE))
         );
 
         pack();
@@ -182,8 +183,7 @@ public class ProductInfo extends javax.swing.JFrame {
         DefaultTableModel dm = (DefaultTableModel) ProductInfo.getModel();
         ArrayList<Product> product_list = ProductPreparedStatement.Display();
         for (Product p : product_list) {
-            dm.addRow(new Object[]
-            {p.getProductID(),p.getName(),p.getPrice()} );
+            dm.addRow(new Object[]{p.getProductID(), p.getName(), p.getPrice()});
         }
     }//GEN-LAST:event_formComponentShown
 
@@ -191,7 +191,6 @@ public class ProductInfo extends javax.swing.JFrame {
         // TODO add your handling code here:
         Product p = null;
         try {
-//            p = ProductPreparedStatement.Search(Integer.parseInt(ProductID.getText()));
             p = ProductPreparedStatement.Search(Integer.parseInt(ProductIDTextField.getText()));
             if (p == null) {
                     JOptionPane.showMessageDialog(null, "No product with such ID!");
@@ -216,7 +215,6 @@ public class ProductInfo extends javax.swing.JFrame {
     private void ProductCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductCreateActionPerformed
         // TODO add your handling code here:
         Product p = new Product();
-        String pet_id = ProductIDTextField.getText();
         try {
             p.setProductID(Integer.parseInt(ProductIDTextField.getText()));
             p.setName(ProductNameTextField.getText());
@@ -249,7 +247,7 @@ public class ProductInfo extends javax.swing.JFrame {
     private void ProductDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductDeleteActionPerformed
         // TODO add your handling code here:
         String id = ProductIDTextField.getText();
-        int a = JOptionPane.showConfirmDialog(null, "Confirm Deletion", "Select", JOptionPane.YES_NO_CANCEL_OPTION);
+        int a = JOptionPane.showConfirmDialog(null, "Confirm Deletion", "Select", JOptionPane.YES_NO_OPTION);
         if (a == 0) {
             ProductPreparedStatement.Delete(id);
             

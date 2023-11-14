@@ -536,7 +536,7 @@ public class Personal_Info extends javax.swing.JFrame {
     private void BACK_PETActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BACK_PETActionPerformed
         // TODO add your handling code here:
         setVisible(false);
-        new PetInfoDel().setVisible(true);
+        new Home().setVisible(true);
     }//GEN-LAST:event_BACK_PETActionPerformed
 
     private void BACK_PET1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BACK_PET1ActionPerformed

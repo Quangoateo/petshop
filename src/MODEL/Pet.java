@@ -1,4 +1,4 @@
-package CONTROLLER;
+package MODEL;
 
 public class Pet implements Description {
     private int id;
@@ -6,15 +6,10 @@ public class Pet implements Description {
     private String breed;
     private int age;
     private double price;
-
-    public int getId() {
-        return id;
+    
+    public Pet() {
     }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
+    
     public Pet(String name, String breed, int age, double price) {
         this.name = name;
         this.breed = breed;
@@ -22,9 +17,14 @@ public class Pet implements Description {
         this.price = price;
     }
     
-    public Pet() {
+    public int getId() {
+        return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+    
     public String getName() {
         return name;
     }

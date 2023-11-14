@@ -1,5 +1,5 @@
 
-package CONTROLLER;
+package MODEL;
 
 /**
  *

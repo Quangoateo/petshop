@@ -5,8 +5,8 @@
 package GUI;
 
 import javax.swing.JOptionPane;
-import DATABASE.Customer_prepared_statement;
-import CONTROLLER.User;
+import CONTROLLER.Customer_prepared_statement;
+import MODEL.User;
 
 /**
  *
@@ -109,7 +109,7 @@ public class Login_form extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Wrong Email or Password!");
         } else {
             setVisible(false);
-            new PetInfoDel().setVisible(true);
+            new Home().setVisible(true);
         }
     }//GEN-LAST:event_button_loginActionPerformed
 

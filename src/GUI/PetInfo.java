@@ -4,6 +4,12 @@
  */
 package GUI;
 
+import MODEL.Pet;
+import CONTROLLER.PetPreparedStatement;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author TG
@@ -29,49 +35,90 @@ public class PetInfo extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        ProductID = new javax.swing.JTextField();
-        ProductName = new javax.swing.JTextField();
-        ProductPrice = new javax.swing.JTextField();
+        PetIDTextField = new javax.swing.JTextField();
+        PetNameTextField = new javax.swing.JTextField();
+        PetBreedTextField = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        ProductTable = new javax.swing.JTable();
-        ProductSearch = new javax.swing.JButton();
-        ProductCreate = new javax.swing.JButton();
-        ProductUpdate = new javax.swing.JButton();
-        ProductDelete = new javax.swing.JButton();
+        PetInfo = new javax.swing.JTable();
+        PetSearch = new javax.swing.JButton();
+        PetCreate = new javax.swing.JButton();
+        PetUpdate = new javax.swing.JButton();
+        PetDelete = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        PetAgeTextField = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        PetPriceTextField = new javax.swing.JTextField();
+        PetReload = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                formComponentShown(evt);
+            }
+        });
 
         jLabel1.setText("ID");
 
         jLabel2.setText("Name");
 
-        jLabel3.setText("Price");
+        jLabel3.setText("Breed");
 
-        ProductTable.setModel(new javax.swing.table.DefaultTableModel(
+        PetInfo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ProductID", "Name", "Price"
+                "PetID", "Name", "Breed", "Age", "Price"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(ProductTable);
+        jScrollPane1.setViewportView(PetInfo);
 
-        ProductSearch.setText("Search");
+        PetSearch.setText("Search");
+        PetSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PetSearchActionPerformed(evt);
+            }
+        });
 
-        ProductCreate.setText("Create");
+        PetCreate.setText("Create");
+        PetCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PetCreateActionPerformed(evt);
+            }
+        });
 
-        ProductUpdate.setText("Update");
+        PetUpdate.setText("Update");
+        PetUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PetUpdateActionPerformed(evt);
+            }
+        });
 
-        ProductDelete.setText("Delete");
+        PetDelete.setText("Delete");
+        PetDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PetDeleteActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("Age");
+
+        jLabel5.setText("Price");
+
+        PetReload.setText("Reload");
+        PetReload.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PetReloadActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -83,55 +130,159 @@ public class PetInfo extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel3))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(1, 1, 1)
+                                    .addComponent(jLabel5))))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(ProductID, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
-                            .addComponent(ProductName)
-                            .addComponent(ProductPrice)))
+                            .addComponent(PetIDTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+                            .addComponent(PetNameTextField)
+                            .addComponent(PetBreedTextField)
+                            .addComponent(PetAgeTextField)
+                            .addComponent(PetPriceTextField)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(ProductSearch)
+                        .addGap(1, 1, 1)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(PetDelete)
+                            .addComponent(PetSearch))
                         .addGap(18, 18, 18)
-                        .addComponent(ProductCreate)
-                        .addGap(18, 18, 18)
-                        .addComponent(ProductUpdate))
-                    .addComponent(ProductDelete))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(61, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(PetCreate)
+                                .addGap(18, 18, 18)
+                                .addComponent(PetUpdate))
+                            .addComponent(PetReload))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(ProductID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(ProductName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(ProductPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ProductSearch)
-                    .addComponent(ProductCreate)
-                    .addComponent(ProductUpdate))
-                .addGap(18, 18, 18)
-                .addComponent(ProductDelete)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(24, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(PetIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(PetNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(PetBreedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(PetAgeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(PetPriceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(PetSearch)
+                            .addComponent(PetCreate)
+                            .addComponent(PetUpdate))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(PetDelete)
+                            .addComponent(PetReload))))
+                .addContainerGap(113, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void PetReloadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PetReloadActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        new PetInfo().setVisible(true);
+    }//GEN-LAST:event_PetReloadActionPerformed
+
+    private void PetSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PetSearchActionPerformed
+        // TODO add your handling code here:
+        Pet p = null;
+        try {
+            p = PetPreparedStatement.Search(Integer.parseInt(PetIDTextField.getText()));
+            if (p == null) {
+                JOptionPane.showMessageDialog(null, "No pet with such ID!");
+            } else {
+                DefaultTableModel dtm = (DefaultTableModel) PetInfo.getModel();
+                dtm.setRowCount(0);
+                dtm.addRow(new Object[]{p.getId(), p.getName(), p.getBreed(), p.getAge(), p.getPrice()});
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }//GEN-LAST:event_PetSearchActionPerformed
+
+    private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
+        // TODO add your handling code here:
+        DefaultTableModel dm = (DefaultTableModel) PetInfo.getModel();
+        ArrayList<Pet> list = PetPreparedStatement.Display();
+        for (Pet p : list) {
+            dm.addRow(new Object[]{p.getId(), p.getName(), p.getBreed(), p.getAge(), p.getPrice()});
+        }
+    }//GEN-LAST:event_formComponentShown
+
+    private void PetCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PetCreateActionPerformed
+        // TODO add your handling code here:
+        Pet p = new Pet();
+        try {
+            p.setId(Integer.parseInt(PetIDTextField.getText()));
+            p.setName(PetNameTextField.getText());
+            p.setBreed(PetBreedTextField.getText());
+            p.setAge(Integer.parseInt(PetAgeTextField.getText()));
+            p.setPrice(Double.parseDouble(PetPriceTextField.getText()));
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        PetPreparedStatement.Create(p);
+        
+        setVisible(false);
+        new PetInfo().setVisible(true);
+    }//GEN-LAST:event_PetCreateActionPerformed
+
+    private void PetUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PetUpdateActionPerformed
+        // TODO add your handling code here:
+        Pet p = new Pet();
+        try {
+            p.setId(Integer.parseInt(PetIDTextField.getText()));
+            p.setName(PetNameTextField.getText());
+            p.setBreed(PetBreedTextField.getText());
+            p.setAge(Integer.parseInt(PetAgeTextField.getText()));
+            p.setPrice(Double.parseDouble(PetPriceTextField.getText()));
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        PetPreparedStatement.Update(p);
+
+        setVisible(false);
+        new PetInfo().setVisible(true);
+    }//GEN-LAST:event_PetUpdateActionPerformed
+
+    private void PetDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PetDeleteActionPerformed
+        // TODO add your handling code here:
+        String id = PetIDTextField.getText();
+        int a = JOptionPane.showConfirmDialog(null, "Confirm Deletion", "Select", JOptionPane.YES_NO_OPTION);
+        if (a == 0) {
+            PetPreparedStatement.Delete(id);
+            
+            setVisible(false);
+            new PetInfo().setVisible(true);
+        }
+    }//GEN-LAST:event_PetDeleteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,17 +321,22 @@ public class PetInfo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ProductCreate;
-    private javax.swing.JButton ProductDelete;
-    private javax.swing.JTextField ProductID;
-    private javax.swing.JTextField ProductName;
-    private javax.swing.JTextField ProductPrice;
-    private javax.swing.JButton ProductSearch;
-    private javax.swing.JTable ProductTable;
-    private javax.swing.JButton ProductUpdate;
+    private javax.swing.JTextField PetAgeTextField;
+    private javax.swing.JTextField PetBreedTextField;
+    private javax.swing.JButton PetCreate;
+    private javax.swing.JButton PetDelete;
+    private javax.swing.JTextField PetIDTextField;
+    private javax.swing.JTable PetInfo;
+    private javax.swing.JTextField PetNameTextField;
+    private javax.swing.JTextField PetPriceTextField;
+    private javax.swing.JButton PetReload;
+    private javax.swing.JButton PetSearch;
+    private javax.swing.JButton PetUpdate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

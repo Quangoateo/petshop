@@ -4,8 +4,8 @@
  */
 package GUI;
 
-import DATABASE.Customer_prepared_statement;
-import CONTROLLER.User;
+import CONTROLLER.Customer_prepared_statement;
+import MODEL.User;
 
 /**
  *

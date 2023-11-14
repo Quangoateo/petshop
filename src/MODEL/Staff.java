@@ -1,4 +1,4 @@
-package CONTROLLER;
+package MODEL;
 
 public abstract class Staff {
 	 // Fields
