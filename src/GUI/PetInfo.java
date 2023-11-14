@@ -610,14 +610,14 @@ public class PetInfo extends javax.swing.JFrame {
 
     private void deletePetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletePetActionPerformed
         // TODO add your handling code here:
-      String id = PetID.getText();
-      int a=  JOptionPane.showConfirmDialog(null,"Confirm Deletion","Select",JOptionPane.YES_NO_CANCEL_OPTION);
-      if(a==0)
-      {
-          PetPreparedStatement.Delete(id);
-          setVisible(false);
-          new PetInfo().setVisible(true);
-      }
+        String id = PetID.getText();
+        int a = JOptionPane.showConfirmDialog(null,"Confirm Deletion","Select",JOptionPane.YES_NO_CANCEL_OPTION);
+        if(a==0)
+        {
+            PetPreparedStatement.Delete(id);
+            setVisible(false);
+            new PetInfo().setVisible(true);
+        }
         
 //        PetPreparedStatement.Delete(p); 
          //reload the jpanel
