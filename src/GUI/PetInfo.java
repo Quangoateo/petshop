@@ -51,6 +51,7 @@ public class PetInfo extends javax.swing.JFrame {
         Reload = new javax.swing.JButton();
         BackToHome = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addComponentListener(new java.awt.event.ComponentAdapter() {
@@ -58,12 +59,19 @@ public class PetInfo extends javax.swing.JFrame {
                 formComponentShown(evt);
             }
         });
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("ID");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 111, -1, -1));
 
         jLabel2.setText("Name");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 142, -1, -1));
 
         jLabel3.setText("Breed");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 173, -1, -1));
+        getContentPane().add(PetIDTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 109, 240, -1));
+        getContentPane().add(PetNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 140, 240, -1));
+        getContentPane().add(PetBreedTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 171, 240, -1));
 
         PetInfo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -83,12 +91,15 @@ public class PetInfo extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(PetInfo);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 109, -1, 268));
+
         PetSearch.setText("Search");
         PetSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PetSearchActionPerformed(evt);
             }
         });
+        getContentPane().add(PetSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 270, -1, -1));
 
         PetCreate.setText("Create");
         PetCreate.addActionListener(new java.awt.event.ActionListener() {
@@ -96,6 +107,7 @@ public class PetInfo extends javax.swing.JFrame {
                 PetCreateActionPerformed(evt);
             }
         });
+        getContentPane().add(PetCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 270, -1, -1));
 
         PetUpdate.setText("Update");
         PetUpdate.addActionListener(new java.awt.event.ActionListener() {
@@ -103,6 +115,7 @@ public class PetInfo extends javax.swing.JFrame {
                 PetUpdateActionPerformed(evt);
             }
         });
+        getContentPane().add(PetUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(211, 270, -1, -1));
 
         PetDelete.setText("Delete");
         PetDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -110,10 +123,15 @@ public class PetInfo extends javax.swing.JFrame {
                 PetDeleteActionPerformed(evt);
             }
         });
+        getContentPane().add(PetDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 313, -1, -1));
 
         jLabel4.setText("Age");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 204, -1, -1));
+        getContentPane().add(PetAgeTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 202, 240, -1));
 
         jLabel5.setText("Price");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 235, -1, -1));
+        getContentPane().add(PetPriceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 233, 240, -1));
 
         Reload.setText("Reload");
         Reload.addActionListener(new java.awt.event.ActionListener() {
@@ -121,6 +139,7 @@ public class PetInfo extends javax.swing.JFrame {
                 ReloadActionPerformed(evt);
             }
         });
+        getContentPane().add(Reload, new org.netbeans.lib.awtextra.AbsoluteConstraints(597, 395, -1, -1));
 
         BackToHome.setText("Back to Home");
         BackToHome.addActionListener(new java.awt.event.ActionListener() {
@@ -128,101 +147,15 @@ public class PetInfo extends javax.swing.JFrame {
                 BackToHomeActionPerformed(evt);
             }
         });
+        getContentPane().add(BackToHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(685, 395, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel6.setText("Pet");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 35, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 561, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Reload)
-                                .addGap(18, 18, 18)
-                                .addComponent(BackToHome))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel1)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel4)
-                                                    .addComponent(jLabel3))
-                                                .addGroup(layout.createSequentialGroup()
-                                                    .addGap(1, 1, 1)
-                                                    .addComponent(jLabel5))))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(PetIDTextField)
-                                            .addComponent(PetNameTextField)
-                                            .addComponent(PetBreedTextField)
-                                            .addComponent(PetAgeTextField)
-                                            .addComponent(PetPriceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(1, 1, 1)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(PetDelete)
-                                            .addComponent(PetSearch))
-                                        .addGap(18, 18, 18)
-                                        .addComponent(PetCreate)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(PetUpdate)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(32, 32, 32))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(jLabel6)
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(PetIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(PetNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(PetBreedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(PetAgeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(PetPriceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(PetSearch)
-                            .addComponent(PetCreate)
-                            .addComponent(PetUpdate))
-                        .addGap(18, 18, 18)
-                        .addComponent(PetDelete)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Reload)
-                    .addComponent(BackToHome))
-                .addContainerGap(34, Short.MAX_VALUE))
-        );
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/pexels-photo-1108099.jpeg"))); // NOI18N
+        jLabel7.setText("jLabel7");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(-310, -60, 1130, 710));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -368,6 +301,7 @@ public class PetInfo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

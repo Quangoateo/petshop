@@ -51,6 +51,7 @@ public class StaffInfo extends javax.swing.JFrame {
         StaffDelete = new javax.swing.JButton();
         Reload = new javax.swing.JButton();
         BackToHome = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addComponentListener(new java.awt.event.ComponentAdapter() {
@@ -58,19 +59,31 @@ public class StaffInfo extends javax.swing.JFrame {
                 formComponentShown(evt);
             }
         });
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("ID");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 121, -1, -1));
 
         jLabel2.setText("Name");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 158, -1, -1));
 
         jLabel3.setText("Phone Number");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 195, -1, -1));
 
         jLabel4.setText("Email");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 232, -1, -1));
 
         jLabel5.setText("Password");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 269, -1, -1));
+        getContentPane().add(StaffIDTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 119, 219, -1));
+        getContentPane().add(StaffNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 156, 219, -1));
+        getContentPane().add(StaffPhoneNumberTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 193, 219, -1));
+        getContentPane().add(StaffEmailTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 230, 219, -1));
+        getContentPane().add(StaffPasswordTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 267, 219, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel6.setText("Staff");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 30, -1, -1));
 
         StaffInfo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -90,12 +103,15 @@ public class StaffInfo extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(StaffInfo);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 84, -1, 202));
+
         StaffSearch.setText("Search");
         StaffSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 StaffSearchActionPerformed(evt);
             }
         });
+        getContentPane().add(StaffSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 304, -1, -1));
 
         StaffCreate.setText("Create");
         StaffCreate.addActionListener(new java.awt.event.ActionListener() {
@@ -103,6 +119,7 @@ public class StaffInfo extends javax.swing.JFrame {
                 StaffCreateActionPerformed(evt);
             }
         });
+        getContentPane().add(StaffCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(133, 304, -1, -1));
 
         StaffUpdate.setText("Update");
         StaffUpdate.addActionListener(new java.awt.event.ActionListener() {
@@ -110,6 +127,7 @@ public class StaffInfo extends javax.swing.JFrame {
                 StaffUpdateActionPerformed(evt);
             }
         });
+        getContentPane().add(StaffUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(219, 304, -1, -1));
 
         StaffDelete.setText("Delete");
         StaffDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -117,6 +135,7 @@ public class StaffInfo extends javax.swing.JFrame {
                 StaffDeleteActionPerformed(evt);
             }
         });
+        getContentPane().add(StaffDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(307, 304, -1, -1));
 
         Reload.setText("Reload");
         Reload.addActionListener(new java.awt.event.ActionListener() {
@@ -124,6 +143,7 @@ public class StaffInfo extends javax.swing.JFrame {
                 ReloadActionPerformed(evt);
             }
         });
+        getContentPane().add(Reload, new org.netbeans.lib.awtextra.AbsoluteConstraints(651, 304, -1, -1));
 
         BackToHome.setText("Back to Home");
         BackToHome.addActionListener(new java.awt.event.ActionListener() {
@@ -131,84 +151,11 @@ public class StaffInfo extends javax.swing.JFrame {
                 BackToHomeActionPerformed(evt);
             }
         });
+        getContentPane().add(BackToHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(739, 304, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(StaffSearch)
-                            .addGap(18, 18, 18)
-                            .addComponent(StaffCreate)
-                            .addGap(18, 18, 18)
-                            .addComponent(StaffUpdate)
-                            .addGap(18, 18, 18)
-                            .addComponent(StaffDelete)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Reload)
-                            .addGap(18, 18, 18)
-                            .addComponent(BackToHome))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel1)
-                                .addComponent(jLabel2)
-                                .addComponent(jLabel3)
-                                .addComponent(jLabel4)
-                                .addComponent(jLabel5))
-                            .addGap(33, 33, 33)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(StaffIDTextField)
-                                .addComponent(StaffNameTextField)
-                                .addComponent(StaffPhoneNumberTextField)
-                                .addComponent(StaffEmailTextField)
-                                .addComponent(StaffPasswordTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(18, 18, 18)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(40, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addGap(41, 41, 41)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(StaffIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(StaffNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(StaffPhoneNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(StaffEmailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(StaffPasswordTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(StaffSearch)
-                    .addComponent(StaffCreate)
-                    .addComponent(StaffUpdate)
-                    .addComponent(StaffDelete)
-                    .addComponent(Reload)
-                    .addComponent(BackToHome))
-                .addContainerGap(39, Short.MAX_VALUE))
-        );
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/pexels-photo-1957478.jpeg"))); // NOI18N
+        jLabel7.setText("jLabel7");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -50, 1120, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -353,6 +300,7 @@ public class StaffInfo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

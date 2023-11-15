@@ -50,7 +50,7 @@ public class StaffPreparedStatement {
     public static Staff Search(int id) {
         ResultSet rs;
         Staff staff = null;
-        String query = " SELECT * FROM staff WHERE id = '" + id + "' ";
+        String query = " SELECT * FROM staff WHERE staffid = '" + id + "' ";
         rs = db_operations.getData(query);
         try {
             while (rs.next()) {
@@ -75,15 +75,15 @@ public class StaffPreparedStatement {
     }
 
     public static void Delete(String id) {
-        String sql = "DELETE FROM staff WHERE id =  '" + id + "'";
+        String sql = "DELETE FROM staff WHERE staffid =  '" + id + "'";
         db_operations.set_or_delete(sql, "Delete Successfully!");
 
     }
 
     public static void Update(Staff staff) {
-        String sql = "UPDATE staff "
-                + "SET name = '" + staff.getName() + "', phoneNumber ='" + staff.getPhoneNumber() + "', email = " + staff.getEmail() + ", password = " + staff.getPassword() + " "
-                + "WHERE id =  " + staff.getStaffID() + "";
+        String sql = "UPDATE staff  "
+                + "SET name = '" + staff.getName() + "', phoneNumber ='" + staff.getPhoneNumber() + "', email = '" + staff.getEmail() + "', password = '" + staff.getPassword() + "' "
+                + "WHERE staffID  =  " + staff.getStaffID() + "";
         db_operations.set_or_delete(sql, "Update Successfully!");
     }
 }

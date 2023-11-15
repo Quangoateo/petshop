@@ -47,6 +47,7 @@ public class CustomerInfo extends javax.swing.JFrame {
         CustomerDelete = new javax.swing.JButton();
         Reload = new javax.swing.JButton();
         BackToHome = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addComponentListener(new java.awt.event.ComponentAdapter() {
@@ -54,15 +55,23 @@ public class CustomerInfo extends javax.swing.JFrame {
                 formComponentShown(evt);
             }
         });
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("ID");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 121, -1, -1));
 
         jLabel2.setText("Name");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 158, -1, -1));
 
         jLabel3.setText("Phone Number");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 195, -1, -1));
+        getContentPane().add(CustomerIDTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 119, 219, -1));
+        getContentPane().add(CustomerNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 156, 219, -1));
+        getContentPane().add(CustomerPhoneNumberTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 193, 219, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel6.setText("Customer");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 30, -1, -1));
 
         CustomerInfo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -82,12 +91,15 @@ public class CustomerInfo extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(CustomerInfo);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 120, -1, 182));
+
         CustomerSearch.setText("Search");
         CustomerSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CustomerSearchActionPerformed(evt);
             }
         });
+        getContentPane().add(CustomerSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 230, -1, -1));
 
         CustomerCreate.setText("Create");
         CustomerCreate.addActionListener(new java.awt.event.ActionListener() {
@@ -95,6 +107,7 @@ public class CustomerInfo extends javax.swing.JFrame {
                 CustomerCreateActionPerformed(evt);
             }
         });
+        getContentPane().add(CustomerCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(133, 230, -1, -1));
 
         CustomerUpdate.setText("Update");
         CustomerUpdate.addActionListener(new java.awt.event.ActionListener() {
@@ -102,6 +115,7 @@ public class CustomerInfo extends javax.swing.JFrame {
                 CustomerUpdateActionPerformed(evt);
             }
         });
+        getContentPane().add(CustomerUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(219, 230, -1, -1));
 
         CustomerDelete.setText("Delete");
         CustomerDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -109,6 +123,7 @@ public class CustomerInfo extends javax.swing.JFrame {
                 CustomerDeleteActionPerformed(evt);
             }
         });
+        getContentPane().add(CustomerDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(307, 230, -1, -1));
 
         Reload.setText("Reload");
         Reload.addActionListener(new java.awt.event.ActionListener() {
@@ -116,6 +131,7 @@ public class CustomerInfo extends javax.swing.JFrame {
                 ReloadActionPerformed(evt);
             }
         });
+        getContentPane().add(Reload, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 340, -1, -1));
 
         BackToHome.setText("Back to Home");
         BackToHome.addActionListener(new java.awt.event.ActionListener() {
@@ -123,73 +139,11 @@ public class CustomerInfo extends javax.swing.JFrame {
                 BackToHomeActionPerformed(evt);
             }
         });
+        getContentPane().add(BackToHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 340, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(CustomerSearch)
-                        .addGap(18, 18, 18)
-                        .addComponent(CustomerCreate)
-                        .addGap(18, 18, 18)
-                        .addComponent(CustomerUpdate)
-                        .addGap(18, 18, 18)
-                        .addComponent(CustomerDelete)
-                        .addGap(245, 245, 245)
-                        .addComponent(Reload)
-                        .addGap(18, 18, 18)
-                        .addComponent(BackToHome))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3))
-                                .addGap(33, 33, 33)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(CustomerIDTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
-                                    .addComponent(CustomerNameTextField)
-                                    .addComponent(CustomerPhoneNumberTextField))))
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(40, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addGap(41, 41, 41)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(CustomerIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(CustomerNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(CustomerPhoneNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CustomerSearch)
-                    .addComponent(CustomerCreate)
-                    .addComponent(CustomerUpdate)
-                    .addComponent(CustomerDelete)
-                    .addComponent(Reload)
-                    .addComponent(BackToHome))
-                .addContainerGap(33, Short.MAX_VALUE))
-        );
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/pexels-karolina-grabowska-5632402 (2).jpg"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-100, 0, 1000, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -326,6 +280,7 @@ public class CustomerInfo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables

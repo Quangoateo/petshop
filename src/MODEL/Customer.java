@@ -8,10 +8,10 @@ package MODEL;
  *
  * @author TG
  */
-public class Customer {
+public class Customer extends Person {
     private int customerID;
-    private String name;
-    private String phoneNumber;
+//    private String name;
+//    private String phoneNumber;
 
     public int getCustomerID() {
         return customerID;
@@ -21,19 +21,19 @@ public class Customer {
         this.customerID = customerID;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public void setName(String name) {
+//        this.name = name;
+//    }
+//
+//    public String getPhoneNumber() {
+//        return phoneNumber;
+//    }
+//
+//    public void setPhoneNumber(String phoneNumber) {
+//        this.phoneNumber = phoneNumber;
+//    }
 }

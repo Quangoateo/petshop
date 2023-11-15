@@ -41,8 +41,10 @@ public class Home extends javax.swing.JFrame {
         Customer = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         LogOut = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Pet.setText("Pet");
         Pet.addActionListener(new java.awt.event.ActionListener() {
@@ -50,6 +52,7 @@ public class Home extends javax.swing.JFrame {
                 PetActionPerformed(evt);
             }
         });
+        getContentPane().add(Pet, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, -1, -1));
 
         Product.setText("Product");
         Product.addActionListener(new java.awt.event.ActionListener() {
@@ -57,6 +60,7 @@ public class Home extends javax.swing.JFrame {
                 ProductActionPerformed(evt);
             }
         });
+        getContentPane().add(Product, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, -1, -1));
 
         Staff.setText("Staff");
         Staff.addActionListener(new java.awt.event.ActionListener() {
@@ -64,6 +68,7 @@ public class Home extends javax.swing.JFrame {
                 StaffActionPerformed(evt);
             }
         });
+        getContentPane().add(Staff, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 150, -1, -1));
 
         Customer.setText("Customer");
         Customer.addActionListener(new java.awt.event.ActionListener() {
@@ -71,9 +76,11 @@ public class Home extends javax.swing.JFrame {
                 CustomerActionPerformed(evt);
             }
         });
+        getContentPane().add(Customer, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel2.setText("Home");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
 
         LogOut.setText("Log Out");
         LogOut.addActionListener(new java.awt.event.ActionListener() {
@@ -81,43 +88,11 @@ public class Home extends javax.swing.JFrame {
                 LogOutActionPerformed(evt);
             }
         });
+        getContentPane().add(LogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 70, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(LogOut))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(Product)
-                        .addGap(18, 18, 18)
-                        .addComponent(Pet)
-                        .addGap(18, 18, 18)
-                        .addComponent(Customer)
-                        .addGap(18, 18, 18)
-                        .addComponent(Staff)))
-                .addGap(24, 24, 24))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(LogOut))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Product)
-                    .addComponent(Pet)
-                    .addComponent(Customer)
-                    .addComponent(Staff))
-                .addGap(33, 33, 33))
-        );
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/pexels-photo-2581922.jpg"))); // NOI18N
+        jLabel3.setText("jLabel3");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-90, -210, 590, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -194,5 +169,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton Product;
     private javax.swing.JButton Staff;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }

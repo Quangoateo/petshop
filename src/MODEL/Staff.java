@@ -1,8 +1,8 @@
 package MODEL;
-public  class Staff {
+public  class Staff extends Person {
     private int staffID;
-    private String name;
-    private String phoneNumber;
+//    private String name;
+//    private String phoneNumber;
     private String email;
     private String password;
 
@@ -14,21 +14,21 @@ public  class Staff {
         this.staffID = staffID;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public void setName(String name) {
+//        this.name = name;
+//    }
+//
+//    public String getPhoneNumber() {
+//        return phoneNumber;
+//    }
+//
+//    public void setPhoneNumber(String phoneNumber) {
+//        this.phoneNumber = phoneNumber;
+//    }
 
     public String getEmail() {
         return email;
