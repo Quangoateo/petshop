@@ -17,7 +17,7 @@ Provide instructions on how to install your project. Include any dependencies th
 # Example installation commands
 git clone https://github.com/yourusername/yourproject.git](https://github.com/Quangoateo/petshop.git)
 cd yourproject
-pip install -r requirements.txt
+Import database
 ```
 ## Project Description
 -Database
