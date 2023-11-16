@@ -1,4 +1,4 @@
-#Pet Store Management App
+# Pet Store Management App
 
 Our app helps manager to manage employee and pets 
 
@@ -18,3 +18,12 @@ Provide instructions on how to install your project. Include any dependencies th
 git clone https://github.com/yourusername/yourproject.git](https://github.com/Quangoateo/petshop.git)
 cd yourproject
 pip install -r requirements.txt
+```
+## Project Description
+-Database
+
+-Controller
+
+-Model
+
+-Gui
