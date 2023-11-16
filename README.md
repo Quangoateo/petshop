@@ -1,6 +1,6 @@
 #Pet Store Management App
 
-Brief description of your project.
+Our app helps manager to manage employee and pets 
 
 ## Table of Contents
 
